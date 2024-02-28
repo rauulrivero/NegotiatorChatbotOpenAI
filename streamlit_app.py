@@ -1,6 +1,6 @@
 import streamlit as st
 import json
-from model.py import detect_function, function_calling
+from model import detect_function, function_calling
 
 
 # Configurar la interfaz web con Streamlit
