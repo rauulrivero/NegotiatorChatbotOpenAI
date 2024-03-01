@@ -3,8 +3,8 @@ from sqlalchemy.exc import IntegrityError
 import json
 
 class CRUDService:
-    def __init__(self, db):
-        self.session = db.db.session
+    def __init__(self, session):
+        self.session = session
 
     def create_user(self, name, surname, email, telephone):
         try:

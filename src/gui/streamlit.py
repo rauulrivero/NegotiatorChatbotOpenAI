@@ -2,15 +2,15 @@ import json
 import openai
 import streamlit as st
 from src.services.CrudPsgService import CRUDService
+from src.services.Chatbot import Chatbot
 
 
 class StreamlitApp:
-    def __init__(self, chatbot, db, app):
-        self.db = db
-        self.chatbot = chatbot
+    def __init__(self, session, app):
+        self.chatbot = Chatbot()
         self.openai_api_key = None
         self.model_name = None
-        self.crud_service = CRUDService(self.db)
+        self.crud_service = CRUDService(session)
         self.app = app
 
     def setgui(self):
@@ -88,12 +88,10 @@ class StreamlitApp:
                         return
 
                     if output.function_call.name == "calculate_payment_plan":
-                        # Llama al método calculate_payment_plan de la instancia de CrudPsgService
                        with self.app.app_context():
                         json_result = self.crud_service.calculate_payment_plan(**params)
             
                     elif output.function_call.name == "get_all_debts_by_user":
-                        # Llama al método get_all_debts_by_user de la instancia de CrudPsgService
                         with self.app.app_context():
                             json_result = self.crud_service.get_all_debts_by_user(**params)
                 

@@ -1,8 +1,6 @@
 from flask import request, jsonify, Blueprint
 from src.database.Database import Database
 from src.services.CrudPsgService import CRUDService
-from src.services.Chatbot import Chatbot
-from src.gui.streamlit import StreamlitApp
 
 api = Blueprint('api', __name__)
 db_session = Database.db.session

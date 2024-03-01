@@ -21,9 +21,9 @@ def main():
         app.config.from_object(TestingConfig) # it'd be testing
 
     
-    db = Database(app)
+    db_session = Database(app).db.session
     chatbot = Chatbot()
-    app = StreamlitApp(chatbot, db, app)
+    app = StreamlitApp(chatbot, db_session, app)
     app.run()
 
 
