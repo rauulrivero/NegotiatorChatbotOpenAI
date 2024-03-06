@@ -18,9 +18,9 @@ class Chatbot:
                         "type": "number",
                         "description": "El número máximo de meses permitidos para saldar la deuda propuesto por el usuario."
                     },
-                    "proposed_total_debt": {
+                    "id_debt": {
                         "type": "number",
-                        "description": "La cantidad total de deuda propuesta por el deudor."
+                        "description": "El id de la deuda que el deudor quiere consultar."
                     },
                     "proposed_monthly_payment": {
                         "type": "number",

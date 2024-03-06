@@ -1,6 +1,4 @@
-from src.services.Chatbot import Chatbot
 from src.gui.streamlit import StreamlitApp
-from src.services.CrudPsgService import CRUDService
 from src.database.Database import Database
 from flask import Flask
 from config.config import Config, ProductionConfig, DevelopmentConfig, TestingConfig
@@ -22,8 +20,7 @@ def main():
 
     
     db_session = Database(app).db.session
-    chatbot = Chatbot()
-    app = StreamlitApp(chatbot, db_session, app)
+    app = StreamlitApp(db_session, app)
     app.run()
 
 

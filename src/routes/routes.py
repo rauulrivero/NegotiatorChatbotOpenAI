@@ -1,10 +1,13 @@
 from flask import request, jsonify, Blueprint
 from src.database.Database import Database
 from src.services.CrudPsgService import CRUDService
+from src.services.payment_plan_calculator import PaymentPlanCalculator
 
 api = Blueprint('api', __name__)
 db_session = Database.db.session
 crud_service = CRUDService(db_session)
+payment_plan_calculator = PaymentPlanCalculator()
+
 
 @api.route('/', methods=['GET'])
 def index():
@@ -21,4 +24,4 @@ def calculate_payment_plan():
     proposed_maximum_period_months = data['proposed_maximum_period_months']
     proposed_total_debt = data['proposed_total_debt']
     proposed_monthly_payment = data['proposed_monthly_payment']
-    return jsonify(crud_service.calculate_payment_plan(email, proposed_maximum_period_months, proposed_total_debt, proposed_monthly_payment))
+    return jsonify(payment_plan_calculator.calculate_payment_plan(email, proposed_maximum_period_months, proposed_total_debt, proposed_monthly_payment))
