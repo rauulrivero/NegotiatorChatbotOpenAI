@@ -6,7 +6,7 @@ from src.services.payment_plan_calculator import PaymentPlanCalculator
 api = Blueprint('api', __name__)
 db_session = Database.db.session
 crud_service = CRUDService(db_session)
-payment_plan_calculator = PaymentPlanCalculator()
+payment_plan_calculator = PaymentPlanCalculator(crud_service)
 
 
 @api.route('/', methods=['GET'])

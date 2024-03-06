@@ -1,10 +1,8 @@
 import json
-from src.services.CrudPsgService import CRUDService
-
 
 class PaymentPlanCalculator:
-    def __init__(self):
-        self.crud_service = CRUDService()
+    def __init__(self, crud_service):
+        self.crud_service = crud_service
         
     def calculate_payment_plan(self, email, proposed_maximum_period_months, debt_id, proposed_monthly_payment):
         debts = self.crud_service.get_debts_by_user_email(email)
@@ -41,7 +39,7 @@ class PaymentPlanCalculator:
         remaining_debt = total_debt
         months = 0
     
-        while remaining_debt >= proposed_monthly_payment and months < maximum_period_months:
+        while remaining_debt >= proposed_monthly_payment and months < proposed_maximum_period_months:
             months += 1
             remaining_debt -= proposed_monthly_payment
 

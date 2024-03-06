@@ -11,7 +11,7 @@ class StreamlitApp:
         self.openai_api_key = None
         self.model_name = None
         self.crud_service = CRUDService(session)
-        self.payment_plan_calculator = PaymentPlanCalculator()
+        self.payment_plan_calculator = PaymentPlanCalculator(self.crud_service)
         
         self.app = app
 
