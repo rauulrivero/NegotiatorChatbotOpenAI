@@ -6,16 +6,19 @@ class CRUDService:
     def __init__(self, session):
         self.session = session
 
-    def create_user(self, name, surname, email, telephone):
+    def create_user(self, name, surname, email, telephone, password):
         try:
-            user = User(name=name, surname=surname, email=email, telephone=telephone)
+            user = User(name=name, surname=surname, email=email, telephone=telephone, password=password)
             self.session.add(user)
             self.session.commit()
             return user
         except IntegrityError:
             self.session.rollback()
-            print("Error: El teléfono o el correo electrónico ya están en uso.")
+            print("Error: El usuario ya existe.")
             return None
+        
+    def user_exists(self, email):
+        return self.session.query(User).filter(User.email == email).first() is not None
 
     def create_debt(self, total_debt, maximum_period_months, user_email):
         try:
@@ -57,6 +60,9 @@ class CRUDService:
 
     def get_debts_by_user_email(self, email):
         return self.session.query(Debt).filter(Debt.user_email == email).all()
+    
+    def get_passwd_by_email(self, email):
+        return self.session.query(User).filter(User.email == email).first().passwd
 
     def get_debt_by_total_debt(self, total_debt):
         return self.session.query(Debt).filter(Debt.total_debt == total_debt).first()
@@ -87,3 +93,9 @@ class CRUDService:
             }
             debts_data.append(debt_data)
         return json.dumps(debts_data)
+    
+    def get_passwd_by_email(self, email):
+        return self.session.query(User).filter(User.email == email).first().password
+    
+    def validate_user(self, email, password):
+        return self.session.query(User).filter(User.email == email, User.password == password).first() is not None

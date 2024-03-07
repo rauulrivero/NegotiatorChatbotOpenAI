@@ -2,6 +2,7 @@ from src.gui.streamlit import StreamlitApp
 from src.database.Database import Database
 from flask import Flask
 from config.config import Config, ProductionConfig, DevelopmentConfig, TestingConfig
+from src.auth.auth import Authentication
 
 
 
@@ -18,9 +19,9 @@ def main():
     else:
         app.config.from_object(TestingConfig) # it'd be testing
 
-    
+    auth = Authentication()
     db_session = Database(app).db.session
-    app = StreamlitApp(db_session, app)
+    app = StreamlitApp(db_session, app, auth)
     app.run()
 
 
