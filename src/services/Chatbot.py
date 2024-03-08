@@ -1,40 +1,56 @@
 # chatbot.py
 import openai
+import json
 
 class Chatbot:
-    def __init__(self, functions_description):
-        self.functions_description = functions_description
+    def __init__(self, functions):
+        self.functions = functions
+        self.tools_list = self.functions.get_tools_list()
+        self.system_message = functions.get_system_message()
         
-    def detect_function(self, prompt, openai_apikey, model_name):
-        """Give LLM a given prompt and get an answer."""
+
+   
+    def ask_chat_gpt(self, prompt, model, openai_apikey):
+        messages = [
+            {"role": "system", "content": self.system_message},
+            {"role": "user", "content": prompt},
+        ]
+
         openai.api_key = openai_apikey
 
         completion = openai.chat.completions.create(
-            model=model_name,
-            messages=[{"role": "user", "content": prompt}],
-
-            functions=self.functions_description,
-            function_call="auto",  # specify the function call
+            model=model,
+            messages=messages,
+            tools=self.tools_list,
+            tool_choice="auto", 
         )
+        response_message = completion.choices[0].message
+        tool_calls = response_message.tool_calls
+       
 
-        output = completion.choices[0].message
-        return output
-    
-    def function_calling(self, prompt, function, content, openai_apikey, model_name):
-        """Give LLM a given prompt and get an answer."""
-        openai.api_key = openai_apikey
+        if tool_calls:     
+            available_functions = self.functions.get_functions_available()
 
-        completion = openai.chat.completions.create(
-            model=model_name,
-            messages=[{"role": "user", "content": prompt},
-                    {"role":"function", "name": function, "content": content}],
+            messages.append(response_message) 
+            for tool_call in tool_calls:
+                function_name = tool_call.function.name
+                function_to_call = available_functions[function_name]
+                function_args = json.loads(tool_call.function.arguments)
+                function_response = function_to_call(**function_args)
 
-            functions=self.functions_description,
-            function_call="auto",  # specify the function call
-        )
-
-        output = completion.choices[0].message
-        return output
-    
-
-    
+                messages.append(
+                    {
+                        "tool_call_id": tool_call.id,
+                        "role": "tool",
+                        "name": function_name,
+                        "content": function_response,
+                    }
+                )  # extend conversation with function response
+            second_response = openai.chat.completions.create(
+                model=model,
+                messages=messages,
+            )  # get a new response from the model where it can see the function response
+            return second_response.choices[0].message.content
+        
+        else:
+            return response_message.content

@@ -9,10 +9,10 @@ class StreamlitApp:
     def __init__(self, session, app, auth):
         self.openai_api_key = None
         self.model_name = None
-        self.crud_service = CRUDService(session)
+        self.crud_service = CRUDService(session, app)
         self.auth = auth
         self.functions_call = FunctionsCall(self.crud_service, self.auth)
-        self.chatbot = Chatbot(self.functions_call.get_functions_description())
+        self.chatbot = Chatbot(self.functions_call)
         self.app = app
 
     def setgui(self):
@@ -69,6 +69,8 @@ class StreamlitApp:
         password = st.session_state['user']['password'] if 'user' in st.session_state else None
         self.auth.set_user(email, password)
 
+        self.model_name = st.session_state["openai_model"]
+
 
         system_message = "¡Hola! Soy el chatbot de OpenAI. Antes de chatear conmigo, por favor, inicia sesión, introduce tu apikey y selecciona el modelo que deseas usar."
         if "messages" not in st.session_state:
@@ -93,49 +95,7 @@ class StreamlitApp:
                     self.model_name = st.session_state["openai_model"]
 
         
-                    output = self.chatbot.detect_function(prompt, self.openai_api_key, self.model_name)
+                    response = self.chatbot.ask_chat_gpt(prompt, self.model_name, self.openai_api_key)
                 
-
-                    if output.function_call is None:
-                        message_placeholder = st.empty()
-                        full_response = ""
-                        model_name = st.session_state["openai_model"]
-                        for response in openai.chat.completions.create(
-                            model=model_name,
-                            messages=[
-                                {"role": m["role"], "content": m["content"]}
-                                for m in st.session_state.messages
-                            ],
-                            stream=True
-                        ):
-                            full_response += str(response.choices[0].delta.content)
-                            message_placeholder.markdown(full_response[:-4] + "▌")
-                        message_placeholder.markdown(full_response[:-4])
-                        st.session_state.messages.append({"role": "assistant", "content": full_response[:-4]})
-
-                    else:
-
-                        try:
-                            params = json.loads(output.function_call.arguments)
-                        except json.JSONDecodeError as e:
-                            st.error(f"Error parsing JSON: {e}")
-                            return
-
-                        if output.function_call.name == "calculate_payment_plan":
-                            with self.app.app_context():        
-                                json_result = self.functions_call.calculate_payment_plan(**params)
-                
-                        elif output.function_call.name == "get_all_debts":
-                            with self.app.app_context():
-                                json_result = self.functions_call.get_all_debts(**params)
-
-                        try:
-                            output = self.chatbot.function_calling(prompt, output.function_call.name, json_result, self.openai_api_key, self.model_name)
-                        except Exception as e:
-                            st.error(f"Error calling function: {e}")
-                            return
-                        
-                        response = output.content
-
-                        st.markdown(response)
-                        st.session_state.messages.append({"role": "assistant", "content": response})
+                    st.markdown(response)
+                    st.session_state.messages.append({"role": "assistant", "content": response})
