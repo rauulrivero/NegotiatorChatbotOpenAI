@@ -10,11 +10,7 @@ class Chatbot:
         
 
    
-    def ask_chat_gpt(self, prompt, model, openai_apikey):
-        messages = [
-            {"role": "system", "content": self.system_message},
-            {"role": "user", "content": prompt},
-        ]
+    def ask_chat_gpt(self, model, openai_apikey, messages):
 
         openai.api_key = openai_apikey
 
@@ -31,7 +27,6 @@ class Chatbot:
         if tool_calls:     
             available_functions = self.functions.get_functions_available()
 
-            messages.append(response_message) 
             for tool_call in tool_calls:
                 function_name = tool_call.function.name
                 function_to_call = available_functions[function_name]
@@ -41,7 +36,7 @@ class Chatbot:
                 messages.append(
                     {
                         "tool_call_id": tool_call.id,
-                        "role": "tool",
+                        "role": "function",
                         "name": function_name,
                         "content": function_response,
                     }

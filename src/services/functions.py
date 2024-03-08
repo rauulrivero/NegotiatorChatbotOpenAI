@@ -68,6 +68,31 @@ class FunctionsCall:
                         "description": "A list of all debts associated with the user, each represented as a JSON object."
                     }
                 }
+            },
+            {
+                "type": "function",
+                "function": {
+                    "name": "calculate_payment_plan",
+                    "description": "Calculates a payment plan to settle a debt within a specific period for a given user, considering the proposed total debt.",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "proposed_maximum_period_months": {
+                                "type": "number",
+                                "description": "The maximum number of months allowed to settle the debt as proposed by the user."
+                            },
+                            "debt_id": {
+                                "type": "number",
+                                "description": "The ID of the debt that the debtor wants to inquire about."
+                            },
+                            "proposed_monthly_payment": {
+                                "type": "number",
+                                "description": "The amount that the debtor proposes to pay each month."
+                            }
+                        },
+                        "required": ["proposed_maximum_period_months", "debt_id", "proposed_monthly_payment"]
+                    }
+                }
             }
         ]
 
@@ -81,7 +106,7 @@ class FunctionsCall:
         if debt_id is None:
             return json.dumps({"error": "El id de deuda no existe."})
         if email is None:
-            return json.dumps({"error": "Por favor, primero inicie sesión."})
+            return json.dumps({"error": "Por favor, primero inicie sesion."})
         return None
 
     def validate_maximum_period(self, debt_id, proposed_maximum_period_months):
@@ -97,9 +122,9 @@ class FunctionsCall:
         maximum_period_months = debt.maximum_period_months
         if proposed_maximum_period_months > maximum_period_months:
             return json.dumps({
-                "error": f"El número máximo de meses permitido para pagar su deuda es de {maximum_period_months} meses."
+                "error": f"El número maximo de meses permitido para pagar su deuda es de {maximum_period_months} meses."
             })
-        return json.dumps({"message": "El periodo propuesto es válido."})
+        return json.dumps({"message": "El periodo propuesto es valido."})
 
     def validate_proposed_payment(self, debt_id, proposed_monthly_payment):
         email = self.auth.get_user_email()
@@ -116,15 +141,14 @@ class FunctionsCall:
             return json.dumps({
                 "error": f"El pago propuesto es inferior al mínimo aceptable. El pago mínimo aceptado es de {minimum_accepted_payment}€."
             })
-        return json.dumps({"message": "El pago propuesto es válido."})
+        return json.dumps({"message": "El pago propuesto es valido."})
 
 
     
     def get_all_debts(self):
-
         user_email = self.auth.get_user_email()
         if user_email is None:
-            return json.dumps({"error": "Por favor, primero inicie sesión."})
+            return json.dumps({"error": "Por favor, primero inicie sesion."})
        
         
         debts = self.crud_service.get_debts_by_user_email(user_email)
@@ -143,6 +167,47 @@ class FunctionsCall:
             debts_data.append(debt_data)
         return json.dumps(debts_data)
     
+    def calculate_payment_plan(self, proposed_maximum_period_months, debt_id, proposed_monthly_payment):
+        email = self.auth.get_user_email()
+        debts = self.crud_service.get_debts_by_user_email(email)
+        if debts is None:
+            return json.dumps({"error": "Este usuario no tiene deudas"})
+
+        debt = self.crud_service.get_debt_by_id(debt_id)
+        if debt is None:
+            return json.dumps({"error": "No tiene ninguna deuda con esa cantidad total de deuda."})
+
+        validation_maximum_period = self.validate_maximum_period(debt_id, proposed_maximum_period_months)
+        validation_proposed_payment = self.validate_proposed_payment(debt_id, proposed_monthly_payment)
+
+
+        if "error" in validation_maximum_period:
+            return validation_maximum_period
+        elif "error" in validation_proposed_payment:
+            return validation_proposed_payment
+
+
+        total_debt = debt.total_debt
+
+        remaining_debt = total_debt
+        months = 0
+
+        while remaining_debt >= proposed_monthly_payment and months < proposed_maximum_period_months:
+            months += 1
+            remaining_debt -= proposed_monthly_payment
+
+        if remaining_debt <= 0:
+            return json.dumps({
+                "message": f"Si pagas {proposed_monthly_payment}€ cada mes, cubrirías la deuda de {total_debt}€ en {months} meses."
+            })
+        else:
+            months += 1
+            last_payment = remaining_debt
+            return json.dumps({
+                "message": f"Si pagas {proposed_monthly_payment}€ cada mes, cubririas la mayor parte de la deuda de ${total_debt} en {months - 1} meses. En el mes {months}, te quedaría un pago final de {last_payment}€ para saldar completamente la deuda."
+            })
+
+    
     
     
     def get_tools_list(self):
@@ -153,6 +218,7 @@ class FunctionsCall:
             "validate_maximum_period": self.validate_maximum_period,
             "validate_proposed_payment" : self.validate_proposed_payment,
             "get_all_debts": self.get_all_debts,
+            "calculate_payment_plan": self.calculate_payment_plan
         }
     
     def get_system_message(self):

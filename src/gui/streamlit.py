@@ -51,13 +51,10 @@ class StreamlitApp:
 
             system_message = st.text_area(label='Mensaje de sistema:',
                                         height=180,
-                                        placeholder='Instrucciones que complementan el comportamiento de tu modelo de fine-tuning. Ej: Responde siempre alegre.')
+                                        placeholder='Instrucciones que complementan el comportamiento de tu modelo. Ej: Responde siempre alegre.')
 
             st.session_state["openai_model"] = st.radio("Selecciona el modelo que deseas usar:", ("gpt-3.5-turbo", "gpt-4-turbo-preview"))
             st.sidebar.button('Limpiar chat', on_click=clear_chat_history)
-
-        if "messages" not in st.session_state:
-            st.session_state.messages = [{"role": "system", "content": system_message}]
 
 
 
@@ -71,8 +68,8 @@ class StreamlitApp:
 
         self.model_name = st.session_state["openai_model"]
 
-
         system_message = "¡Hola! Soy el chatbot de OpenAI. Antes de chatear conmigo, por favor, inicia sesión, introduce tu apikey y selecciona el modelo que deseas usar."
+
         if "messages" not in st.session_state:
             st.session_state.messages = [{"role": "system", "content": system_message}]
 
@@ -94,8 +91,7 @@ class StreamlitApp:
                 with st.chat_message("assistant"):
                     self.model_name = st.session_state["openai_model"]
 
-        
-                    response = self.chatbot.ask_chat_gpt(prompt, self.model_name, self.openai_api_key)
+                    response = self.chatbot.ask_chat_gpt(self.model_name, self.openai_api_key, st.session_state.messages)
                 
                     st.markdown(response)
                     st.session_state.messages.append({"role": "assistant", "content": response})
