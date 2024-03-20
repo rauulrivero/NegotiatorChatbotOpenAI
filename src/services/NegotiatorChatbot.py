@@ -14,11 +14,9 @@ class Negotiator:
 
         self.functions_available = { 
                 "set_debt_id": self.set_debt_id,
-                "respond_to_counteroffer": self.respond_to_counteroffer, 
-                "init_negotiation": self.init_negotiation,
+                "manage_negotiation": self.manage_negotiation,
                 "get_all_debts": self.get_all_debts,
                 "calculate_payment_plan": self.calculate_payment_plan,
-                "offer_inmediate_payment_option": self.offer_inmediate_payment_option,
                 "proposed_payment_plan": self.propose_payment_plan,
                 "propose_partial_immediate_payment": self.propose_partial_immediate_payment
             }
@@ -29,11 +27,9 @@ class Negotiator:
             Funcionalidades Disponibles:
 
             set_debt_id: Establece el ID de la deuda actual para la negociación, asegurando que todas las operaciones subsiguientes se realicen con respecto a la deuda correcta.
-            respond_to_counteroffer: Evalúa contraofertas durante negociaciones de pagos inmediatos, ajustando descuentos si es necesario.
-            init_negotiation: Lanza el proceso de negociación con una oferta inicial una vez identificado el ID de la deuda.
             get_all_debts: Muestra todas las deudas asociadas al usuario, facilitando la selección para negociar.
             calculate_payment_plan: Calcula un plan de pago personalizado basado en propuestas específicas del usuario.
-            offer_immediate_payment_option: Genera automáticamente una propuesta de pago inmediato al usuario que lo solicite.
+            manage_negotiation: Maneja el proceso de negociación de deudas, permitiendo al usuario solicitar una oferta inmediata de pago, responder con una contraoferta, o recibir una propuesta inicial.
             propose_payment_plan: Formula un plan de pago adaptado sin necesidad de entrada adicional del usuario.
             propose_partial_immediate_payment: Calcula un plan de pago ajustado para el saldo restante tras un pago parcial inmediato.
             Estoy aquí para ayudarte a calcular un plan de pagos adaptado a tu situación financiera, evaluar contraofertas, y ofrecer soluciones flexibles que te permitan gestionar tu deuda eficientemente. No aceptaré ninguna oferta sin la especificación clara de una de las funciones que tengo implementadas para asegurar la precisión y eficacia de nuestra negociación.
@@ -50,49 +46,19 @@ class Negotiator:
                     "type": "function",
                     "function": {
                         "name": "set_debt_id",
-                        "description": "Esta función establece el ID de la deuda actual para la negociación. Es utilizada internamente para asegurar que todas las operaciones subsiguientes se realicen con respecto a la deuda correcta.",
+                        "description": "Esta función establece el ID de la deuda con la cual se realizarán todas las negociaciones subsiguientes. Es fundamental especificar un ID de deuda válido antes de proceder con cualquier operación de negociación.",
                         "parameters": {
                             "type": "object",
                             "properties": {
                                 "debt_id": {
                                     "type": "string",
-                                    "description": "El ID de la deuda que se quiere establecer para las operaciones subsiguientes."
+                                    "description": "El ID de la deuda que se desea negociar."
                                 }
                             },
                             "required": ["debt_id"]
                         },
                         "return": {
-                            "description": "No retorna un mensaje directo al usuario, pero actualiza el estado interno con el nuevo ID de deuda."
-                        }
-                    }
-                },
-                {
-                    "type": "function",
-                    "function": {
-                        "name": "respond_to_counteroffer",
-                        "description": "Esta función se activa exclusivamente durante negociaciones de pagos inmediatos, proporcionando al bot la capacidad de evaluar contraofertas de usuarios que buscan saldar su deuda de manera inmediata. Se basa en la comparación del monto de la contraoferta del usuario contra el precio actual y el mínimo aceptable, con el fin de determinar la acción más adecuada: aceptar la contraoferta, rechazarla, o realizar una contrapropuesta. La función tiene como objetivo facilitar un acuerdo mutuamente beneficioso, ajustando el descuento aplicable si es necesario, para acercar las partes a un punto de consenso.",
-                        "parameters": {
-                            "type": "object",
-                            "properties": {
-                                "counteroffer": {
-                                    "type": "number",
-                                    "description": "Monto propuesto por el usuario para la negociación. Debe ser un valor numérico (entero o flotante)."
-                                }
-                            },
-                            "required": ["counteroffer"]
-                        },
-                        "return": {
-                            "description": "Devuelve un mensaje JSON indicando el resultado de la evaluación de la contraoferta, que puede ser aceptación, rechazo o una nueva contrapropuesta."
-                        }
-                    }
-                },
-                {
-                    "type": "function",
-                    "function": {
-                        "name": "init_negotiation",
-                        "description": "Esta función se encarga de lanzar el proceso de negociación una vez que el usuario ha identificado específicamente el ID de su deuda y ha expresado su intención de negociar el pago inmediato de esta. La función presenta al usuario una oferta inicial basada en el precio inicial de la deuda, marcando el comienzo del diálogo de negociación. Este paso inicial es crucial para establecer un punto de partida claro y comienza el proceso hacia un acuerdo potencial, teniendo en cuenta los parámetros específicos de la deuda en cuestión.",
-                        "return": {
-                            "description": "Devuelve un mensaje con la oferta inicial para la deuda especificada, basada en su precio inicial. Incluye la cantidad propuesta y solicita la aceptación del usuario."
+                            "description": "Confirma que el ID de la deuda ha sido establecido correctamente para las negociaciones."
                         }
                     }
                 },
@@ -144,20 +110,24 @@ class Negotiator:
                 {
                     "type": "function",
                     "function": {
-                        "name": "offer_inmediate_payment_option",
-                        "description": "Se activa exclusivamente cuando el usuario expresa el deseo de recibir una oferta para un plan de pago inmediato, sin indicar detalles específicos o condiciones previas. Esta solicitud puede ser tan abierta como '¿Qué oferta me propones?'. La función responde a esta iniciativa generando automáticamente una propuesta de pago inmediato, que incluye un descuento aplicable basado en políticas actuales de negociación. El objetivo es proporcionar al usuario una opción atractiva y beneficiosa para liquidar su deuda de forma acelerada, promoviendo un acuerdo mutuamente ventajoso que incentive el pago anticipado.",
+                        "name": "manage_negotiation",
+                        "description": "Esta función unificada maneja el proceso de negociación de deudas, permitiendo al usuario solicitar una oferta inmediata de pago, responder con una contraoferta, o recibir una propuesta inicial basada en la deuda actual. La función evalúa el contexto de la negociación, incluyendo el ID de deuda válido, el estado actual de la oferta, y los intentos de negociación para proporcionar una respuesta adecuada y fomentar un acuerdo mutuamente beneficioso.",
                         "parameters": {
                             "type": "object",
                             "properties": {
+                                "counteroffer": {
+                                    "type": "number",
+                                    "description": "Monto propuesto por el usuario como contraoferta para saldar la deuda. Este parámetro es opcional y, si se proporciona, debe ser un valor numérico válido."
+                                },
                                 "request_immediate_payment_offer": {
                                     "type": "boolean",
-                                    "description": "Un indicador que el usuario activa para solicitar una oferta de pago inmediato. Esta bandera debe ser establecida en verdadero para que el bot genere y presente la oferta."
+                                    "description": "Un indicador que, cuando se establece en verdadero, solicita al sistema generar una oferta de pago inmediato basada en el descuento actual y el precio de la deuda. Si se omite o se establece en falso, la función procederá a evaluar cualquier contraoferta proporcionada o a presentar una oferta inicial."
                                 }
                             },
-                            "required": ["request_immediate_payment_offer"]
+                            "required": []
                         },
                         "return": {
-                            "description": "Entrega un mensaje en formato JSON que detalla la oferta específica de pago inmediato propuesta por el bot. Este mensaje incluye la cantidad total a pagar con el descuento ya aplicado, brindando al usuario una oportunidad clara para saldar su deuda bajo términos favorables. Si la oferta es aceptada, el sistema procederá a facilitar los siguientes pasos para completar la transacción y cerrar la negociación."
+                            "description": "Devuelve un mensaje en formato JSON con el resultado de la negociación. Puede ser una oferta inicial, una respuesta a una contraoferta (ya sea aceptación, rechazo o una nueva oferta), o una propuesta de pago inmediato, dependiendo de los parámetros proporcionados y el estado de la negociación."
                         }
                     }
                 },
@@ -216,9 +186,12 @@ class Negotiator:
         price = self._get_discounted_price()
         return json.dumps({"message": f"Mi última oferta es que te lo lleves a {price}€. ¿Aceptas?"})
     
-    def _rechazar_oferta(self):  
-        return json.dumps({"message": "No puedo aceptar tu oferta. ¿Puedes mejorarla?"})
-    
+    def _rechazar_oferta(self):
+        price = self._get_discounted_price()
+        return json.dumps({
+            "message": f"No puedo aceptar tu oferta. Actualmente, podemos ofrecerte un descuento del {self.current_discount}% sobre el total de tu deuda, lo que deja el monto a pagar en {price}€. ¿Estás dispuesto a considerar esta oferta o puedes mejorar tu contraoferta?"
+        })
+ 
     def _aceptar_oferta(self):
         return json.dumps({"message": f"¡Perfecto! Trato hecho. El precio final es de {self._get_discounted_price()}€."})
     
@@ -231,78 +204,44 @@ class Negotiator:
         if email is None:
             return json.dumps({"error": "Por favor, primero inicie sesion."})
         return None
- 
+        
 
-    def init_negotiation(self):
+    def manage_negotiation(self, counteroffer=None, request_immediate_payment_offer=False):
         if self.debt_id is None:
             return json.dumps({"error": "Por favor, introduce un ID de deuda válido."})
-        self.initial_price = self.crud_service.get_debt_by_id(self.debt_id).total_debt
-        if self.initial_price is None:
-            return json.dumps({"error": "No tiene ninguna deuda con ese ID."})
         
-        if self.current_price is not None:
-            self.current_price = self.initial_price
-        
-        price = self._get_discounted_price()
-
-
-        message = f"¿Qué te parece si la saldas ya por {price}€? ¿Aceptas?"
-
-        return json.dumps({"message": message})
-    
-
-    def respond_to_counteroffer(self, counteroffer):
-        if self.debt_id is None:
-            return json.dumps({"error": "Por favor, introduce un ID de deuda válido o recuerdame el id de la deuda que quieres consultar."})
-    
         if self.current_price is None:       
             debt = self.crud_service.get_debt_by_id(self.debt_id)
             if debt is None:
                 return json.dumps({"error": "No tiene ninguna deuda con ese ID."})
             else:
-                self.current_price = debt.total_debt
-                self.initial_price = debt.total_debt
+                self.current_price = self.initial_price = debt.total_debt
 
-        if type(counteroffer) not in [int, float]:
-            return json.dumps({"error": "Por favor, introduce un número válido o recuerdame el id de la deuda que quieres consultar."})
-        
-        self._aumentar_oferta()
-        
-        response = self._increase_attempt_or_maxed_out()
-        if response:
-            return response
-
-       
-        if counteroffer < self._get_min_price():
-            response = self._rechazar_oferta()
-        elif counteroffer >= self.current_price:
-            response = self._aceptar_oferta()
-        else:
-            price = self._get_discounted_price()
-            response = json.dumps({"message": f"Mi oferta es de un descuento del {self.current_discount}%, se te quedaría en {price}€. ¿Aceptas?"})
-
-        return response
-    
-
-    def offer_inmediate_payment_option(self, request_immediate_payment_offer):
-        if request_immediate_payment_offer is True:
-            if self.debt_id is None:
-                return json.dumps({"error": "Por favor, introduce un ID de deuda válido."})
-            if self.current_price is None:
-                debt = self.crud_service.get_debt_by_id(self.debt_id)
-                if debt is None:
-                    return json.dumps({"error": "No tiene ninguna deuda con ese ID."})
-                else:
-                    self.current_price = debt.total_debt
-                    self.initial_price = debt.total_debt
-                    
+        if request_immediate_payment_offer:
             self._aumentar_oferta()
-
             offer = self._get_discounted_price()
-            return json.dumps({"message": f"¿Qué te parece si pagas ya la deuda por {offer}€? ¿Aceptas?"})
-        else:
-            return json.dumps({"message": "Entiendo, ¿cómo te gustaría proceder?"})
+            return json.dumps({"message": f"¿Qué te parece si saldas la deuda hoy mismo y se te aplica un {self.current_discount} con un monto total de {offer}€? ¿Aceptas?"})
         
+        if counteroffer is not None:
+            if type(counteroffer) not in [int, float]:
+                return json.dumps({"error": "Por favor, introduce un número válido."})
+            
+            self._aumentar_oferta()
+            response = self._increase_attempt_or_maxed_out()
+            if response:
+                return response
+
+            if counteroffer < self._get_min_price():
+                return self._rechazar_oferta()
+            elif counteroffer >= self.current_price:
+                return self._aceptar_oferta()
+            else:
+                price = self._get_discounted_price()
+                return json.dumps({"message": f"Mi oferta es de un descuento del {self.current_discount}%, se te quedaría en {price}€. ¿Aceptas?"})
+
+        offer = self._get_discounted_price()
+        return json.dumps({"message": f"¿Qué te parece si saldas la deuda hoy mismo y se te aplica un {self.current_discount} con un monto total de {offer}€? ¿Aceptas?"})
+
 
     def get_all_debts(self):
         user_email = self.auth.get_user_email()
@@ -441,7 +380,7 @@ class Negotiator:
 
         if payment_percentage < 50:
             return json.dumps({"error": f"El pago inmediato debe ser al menos el 50% de la deuda total para considerar un plan de pago para el saldo restante."})
-        elif payment_percentage < 65:
+        elif payment_percentage < 75:
             current_discount = 7.5
         else:
             current_discount = 15
@@ -452,9 +391,8 @@ class Negotiator:
         # Llamada a la función para calcular el plan de pago ajustado
         payment_plan_message = calculate_adjusted_payment_plan(discounted_remaining)
 
-        message = f"Con tu pago inmediato de {immediate_payment_amount}€, que representa el {payment_percentage:.2f}% de tu deuda total, te hemos aplicado un descuento de {current_discount}%. El saldo restante de tu deuda es ahora de {discounted_remaining:.2f}€. {payment_plan_message}"
+        message = f"Con tu pago inmediato de {immediate_payment_amount}€, que representa el {payment_percentage:.2f}% de tu deuda total, te hemos aplicado un descuento de {current_discount}%, Recuerda que si pagas mas del 75% ahora mismo se te aplicará un descuento del 15%. El saldo restante de tu deuda es ahora de {discounted_remaining:.2f}€. {payment_plan_message}"
         return json.dumps({"message": message})
-
 
 
     def set_debt_id(self, debt_id):
