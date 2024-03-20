@@ -9,7 +9,7 @@ class FunctionsCall:
                 "type": "function",
                 "function": {
                     "name": "validate_maximum_period",
-                    "description": "Validates if the proposed maximum period is acceptable for a debt.",
+                    "description": "Validates if the proposed maximum period is acceptable for a debt (month).",
                     "parameters": {
                         "type": "object",
                         "properties": {

@@ -6,9 +6,10 @@ from src.auth.auth import Authentication
 
 api = Blueprint('api', __name__)
 db_session = Database.db.session
-crud_service = CRUDService(db_session)
-functions_call = FunctionsCall(crud_service)
+crud_service = CRUDService(db_session, api)
 auth = Authentication()
+functions_call = FunctionsCall(crud_service, auth)
+
 
 
 

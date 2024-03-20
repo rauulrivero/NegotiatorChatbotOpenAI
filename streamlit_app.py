@@ -1,8 +1,11 @@
-from src.gui.streamlit import StreamlitApp
+from src.gui.streamlitNegotiation import StreamlitApp
 from src.database.Database import Database
 from flask import Flask
 from config.config import Config, ProductionConfig, DevelopmentConfig, TestingConfig
 from src.auth.auth import Authentication
+from src.services.NegotiatorChatbot import Negotiator
+from src.services.CrudPsgService import CRUDService
+from src.services.Chatbot import Chatbot
 
 
 
@@ -21,7 +24,11 @@ def main():
 
     auth = Authentication()
     db_session = Database(app).db.session
-    app = StreamlitApp(db_session, app, auth)
+    crud_service = CRUDService(db_session, app)
+    negotiator = Negotiator(crud_service, auth)
+    chatbot = Chatbot(negotiator)
+
+    app = StreamlitApp(crud_service, chatbot, app, auth)
     app.run()
 
 

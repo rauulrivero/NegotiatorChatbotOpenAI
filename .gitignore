@@ -1,4 +1,5 @@
 .env
 .venv/
 prueba.py
+logs/app.log
 ```
