@@ -1,4 +1,5 @@
 import json
+from src.services.tools.assistant_tools import Tooling
 
 class Negotiator:
     def __init__(self, crud_service, auth):
@@ -22,148 +23,41 @@ class Negotiator:
             }
 
         self.system_message = """
-            Hola, soy Pedro, especialista en ofrecer descuentos por pagos inmediatos y en negociar planes de pagos personalizados, utilizando el euro como moneda. Me complace presentarte oportunidades únicas para reducir tu deuda, siempre con la condición de que no se aceptará ninguna oferta sin antes especificar claramente una de las siguientes funciones implementadas que detallo a continuación. Esto garantiza que todas las negociaciones se basen en los servicios específicos que puedo ofrecer, optimizando el proceso para ambas partes.
+            Hola, soy Pedro, especialista en ofrecer descuentos por pagos inmediatos y en negociar planes de pagos personalizados, utilizando el euro como moneda. Estoy aquí para asistirte con una variedad de servicios enfocados en la gestión de deudas. Además de mis servicios de negociación, tengo acceso a información sobre los festivos de apertura de Las Arenas, aunque este detalle es adicional y no esencial para nuestras interacciones directas.
 
             Funcionalidades Disponibles:
 
-            set_debt_id: Establece el ID de la deuda actual para la negociación, asegurando que todas las operaciones subsiguientes se realicen con respecto a la deuda correcta.
-            get_all_debts: Muestra todas las deudas asociadas al usuario, facilitando la selección para negociar.
-            calculate_payment_plan: Calcula un plan de pago personalizado basado en propuestas específicas del usuario.
-            manage_negotiation: Maneja el proceso de negociación de deudas, permitiendo al usuario solicitar una oferta inmediata de pago, responder con una contraoferta, o recibir una propuesta inicial.
-            propose_payment_plan: Formula un plan de pago adaptado sin necesidad de entrada adicional del usuario.
-            propose_partial_immediate_payment: Calcula un plan de pago ajustado para el saldo restante tras un pago parcial inmediato.
-            Estoy aquí para ayudarte a calcular un plan de pagos adaptado a tu situación financiera, evaluar contraofertas, y ofrecer soluciones flexibles que te permitan gestionar tu deuda eficientemente. No aceptaré ninguna oferta sin la especificación clara de una de las funciones que tengo implementadas para asegurar la precisión y eficacia de nuestra negociación.
+            - set_debt_id: Establece el ID de la deuda actual para la negociación, asegurando que todas las operaciones subsiguientes se realicen con respecto a la deuda correcta.
+            - get_all_debts: Muestra todas las deudas asociadas al usuario, facilitando la selección para negociar.
+            - calculate_payment_plan: Calcula un plan de pago personalizado basado en propuestas específicas del usuario.
+            - manage_negotiation: Maneja el proceso de negociación de deudas, permitiendo al usuario solicitar una oferta inmediata de pago, responder con una contraoferta, o recibir una propuesta inicial.
+            - propose_payment_plan: Formula un plan de pago adaptado sin necesidad de entrada adicional del usuario.
+            - propose_partial_immediate_payment: Calcula un plan de pago ajustado para el saldo restante tras un pago parcial inmediato.
 
-            Para concluir, te presentaré un resumen de las opciones disponibles, incluyendo la oferta de descuento por pago inmediato, un plan de pagos adaptado a tus necesidades, y confirmaré la recopilación de cualquier preferencia alternativa que hayas expresado. Tu información será revisada cuidadosamente, y serás contactado con cualquier propuesta de seguimiento.
+            Mi objetivo es ayudarte a calcular un plan de pagos adaptado a tu situación financiera, evaluar contraofertas y ofrecer soluciones flexibles para la gestión eficiente de tu deuda. No aceptaré ninguna oferta sin la especificación clara de una de las funciones que tengo implementadas. Esto asegura que todas nuestras negociaciones se basen en servicios específicos que puedo ofrecer, optimizando el proceso para ambas partes.
 
-            Gracias por tu tiempo, y espero poder ayudarte a aprovechar esta oportunidad para gestionar tu deuda con beneficios adicionales y un plan que se ajuste a tu situación financiera. Importante: Recuerda, antes que nada, preguntar el ID de la deuda con la que va a negociar.
+            Al final de nuestra interacción, te presentaré un resumen de las opciones disponibles, incluyendo la oferta de descuento por pago inmediato y un plan de pagos adaptado a tus necesidades. Tu información será revisada cuidadosamente, y serás contactado con cualquier propuesta de seguimiento.
+
+            Gracias por tu tiempo, y espero poder ayudarte a aprovechar esta oportunidad para gestionar tu deuda con beneficios adicionales y un plan que se ajuste a tu situación financiera. Importante: Recuerda, antes de iniciar cualquier negociación, preguntar el ID de la deuda con la que vas a negociar.
             """
-
-
         
-        self.tools_list = [
-                {
-                    "type": "function",
-                    "function": {
-                        "name": "set_debt_id",
-                        "description": "Esta función establece el ID de la deuda con la cual se realizarán todas las negociaciones subsiguientes. Es fundamental especificar un ID de deuda válido antes de proceder con cualquier operación de negociación.",
-                        "parameters": {
-                            "type": "object",
-                            "properties": {
-                                "debt_id": {
-                                    "type": "string",
-                                    "description": "El ID de la deuda que se desea negociar."
-                                }
-                            },
-                            "required": ["debt_id"]
-                        },
-                        "return": {
-                            "description": "Confirma que el ID de la deuda ha sido establecido correctamente para las negociaciones."
-                        }
-                    }
-                },
-                {
-                    "type": "function",
-                    "function": {
-                        "name": "get_all_debts",
-                        "description": "Esta función se activa solamente cuando un usuario solicita ver todas sus deudas asociadas, utilizando su dirección de correo electrónico como identificador. Se enfoca en proveer al usuario una visión clara y detallada de sus obligaciones financieras, presentando una lista de deudas con información esencial para facilitar el proceso de selección de una deuda específica para negociar. Se destaca el uso del euro como moneda en todas las transacciones y se da prioridad al ID de cada deuda en la presentación de la información, asegurando que el usuario pueda identificar y seleccionar fácilmente la deuda sobre la cual desea negociar.",
-                        "return": {
-                            "type": "array",
-                            "items": {
-                                "type": "object",
-                                "properties": {
-                                    "id": {"type": "integer", "description": "El ID de la deuda."},
-                                    "total_debt": {"type": "number", "description": "El monto total de la deuda."},
-                                    "maximum_period_months": {"type": "integer", "description": "El máximo de meses permitidos para liquidar la deuda."},
-                                    "minimum_accepted_payment": {"type": "number", "description": "El pago mínimo aceptado para la deuda."},
-                                    "user_email": {"type": "string", "description": "El correo electrónico del usuario asociado con la deuda."}
-                                },
-                                "description": "Una lista de las deudas asociadas al usuario, representadas como objetos JSON y la moneda es el €."
-                            }
-                        }
-                    }
-                },
-                {
-                    "type": "function",
-                    "function": {
-                        "name": "calculate_payment_plan",
-                        "description": "Esta función se encarga de calcular un plan de pago personalizado para saldar una deuda, basándose en el periodo máximo propuesto o en el monto del pago mensual propuesto por el usuario. Ahora es más flexible, permitiendo que el usuario especifique únicamente uno de estos dos parámetros, o ambos. Si solo se proporciona uno, la función calcula el otro parámetro basándose en la deuda total y las restricciones del sistema. Si ambos se proporcionan, verifica que el plan sea factible dentro de las limitaciones existentes. Esto facilita al usuario explorar diferentes opciones para gestionar su deuda de manera eficiente.",
-                        "parameters": {
-                            "type": "object",
-                            "properties": {
-                                "proposed_maximum_period_months": {
-                                    "type": "number",
-                                    "description": "El número máximo de meses que el usuario propone para saldar la deuda. Si se omite este parámetro, la función calculará cuántos meses se necesitarán basándose en el pago mensual propuesto, siempre y cuando no se exceda el máximo permitido por el sistema."
-                                },
-                                "proposed_monthly_payment": {
-                                    "type": "number",
-                                    "description": "El monto que el deudor propone pagar cada mes. Si se omite este parámetro, la función calculará el monto de pago mensual necesario para saldar la deuda en el número de meses propuesto, respetando el mínimo aceptado."
-                                }
-                            },
-                            "required": []
-                        },
-                        "return": {
-                            "description": "Devuelve un plan de pago personalizado en formato JSON, detallando el esquema de pagos basado en los parámetros proporcionados por el usuario o calculados por la función. El plan incluirá el número total de pagos, el monto de cada pago, y cualquier otra información relevante para facilitar al usuario la comprensión completa de cómo puede gestionar su deuda bajo las condiciones propuestas."
-                        }
-                    }
-                },
-                {
-                    "type": "function",
-                    "function": {
-                        "name": "manage_negotiation",
-                        "description": "Esta función unificada maneja el proceso de negociación de deudas, permitiendo al usuario solicitar una oferta inmediata de pago, responder con una contraoferta, o recibir una propuesta inicial basada en la deuda actual. La función evalúa el contexto de la negociación, incluyendo el ID de deuda válido, el estado actual de la oferta, y los intentos de negociación para proporcionar una respuesta adecuada y fomentar un acuerdo mutuamente beneficioso.",
-                        "parameters": {
-                            "type": "object",
-                            "properties": {
-                                "counteroffer": {
-                                    "type": "number",
-                                    "description": "Monto propuesto por el usuario como contraoferta para saldar la deuda. Este parámetro es opcional y, si se proporciona, debe ser un valor numérico válido."
-                                },
-                                "request_immediate_payment_offer": {
-                                    "type": "boolean",
-                                    "description": "Un indicador que, cuando se establece en verdadero, solicita al sistema generar una oferta de pago inmediato basada en el descuento actual y el precio de la deuda. Si se omite o se establece en falso, la función procederá a evaluar cualquier contraoferta proporcionada o a presentar una oferta inicial."
-                                }
-                            },
-                            "required": []
-                        },
-                        "return": {
-                            "description": "Devuelve un mensaje en formato JSON con el resultado de la negociación. Puede ser una oferta inicial, una respuesta a una contraoferta (ya sea aceptación, rechazo o una nueva oferta), o una propuesta de pago inmediato, dependiendo de los parámetros proporcionados y el estado de la negociación."
-                        }
-                    }
-                },
-                {
-                    "type": "function",
-                    "function": {
-                        "name": "propose_payment_plan",
-                        "description": "Esta función se desencadena específicamente cuando el usuario solicita al bot una sugerencia de plan de pago para su deuda. Sin requerir entrada adicional del usuario más allá de la solicitud inicial, el bot analiza la deuda seleccionada previamente - identificada por el ID de la deuda establecido en interacciones anteriores - y formula un plan de pago adaptado. El plan se basa en el análisis del período máximo de pago permitido y el monto mínimo de pago mensual aceptado por el sistema, proponiendo un esquema que podría optimizar el proceso de liquidación de la deuda. Además, el bot alienta al usuario a considerar la posibilidad de efectuar pagos mensuales superiores al mínimo recomendado, con el fin de acelerar la liquidación de la deuda, potencialmente reducir el interés acumulado y mejorar su perfil crediticio.",
-                        "return": {
-                            "description": "Emite un plan de pago personalizado en formato JSON, detallando el esquema de pagos sugerido que incluye el ID de la deuda, el número de meses para el pago total basado en lo permitido, y la cantidad mínima mensual de pago recomendada. Se incluye una recomendación para que el deudor evalúe la posibilidad de aumentar la cuantía de los pagos mensuales, con el objetivo de resolver la deuda más rápidamente y con ventajas financieras adicionales."
-                        }
-                    }
-                },
-                {
-                    "type": "function",
-                    "function": {
-                        "name": "propose_partial_immediate_payment",
-                        "description": "Esta función se activa cuando un usuario desea realizar un pago parcial inmediato de su deuda y solicita al bot calcular un plan de pago para el saldo restante. El usuario debe especificar la cantidad que está dispuesto a pagar de forma inmediata, que deberá ser inferior al total de la deuda. Basándose en este monto parcial, el bot evaluará el descuento aplicable y generará un plan de pago ajustado para el saldo restante, incentivando al usuario a liquidar su deuda de manera más eficiente y beneficiosa tanto para el deudor como para el acreedor.",
-                        "parameters": {
-                            "type": "object",
-                            "properties": {
-                                "immediate_payment_amount": {
-                                    "type": "number",
-                                    "description": "La cantidad que el usuario propone pagar de manera inmediata, que debe ser menor que el total de la deuda pendiente. Este monto parcial servirá como base para calcular el descuento aplicable y elaborar un plan de pago ajustado para el monto restante."
-                                }
-                            },
-                            "required": ["immediate_payment_amount"]
-                        },
-                        "return": {
-                            "description": "Proporciona un mensaje en formato JSON que presenta un plan de pago personalizado para el saldo restante de la deuda, después de aplicar el pago parcial inmediato y el descuento correspondiente. Este plan incluirá detalles como el número de pagos restantes, el monto de cada pago, y cualquier otra información relevante para ayudar al usuario a comprender cómo puede completar el pago de su deuda bajo las nuevas condiciones propuestas."
-                        }
-                    }
-                }
-            ]
+        
+        tools_data = Tooling("src/services/tools/negotiator_tools.json").load_tools()
 
-    
+        self.tools_list = self._generate_tools_list(tools_data)
+
+
+
+    def _generate_tools_list(self, tools_data):
+        tools_list = []
+        for tool_name, tool_info in tools_data.items():
+            tool_dict = {
+                "type": "function",
+                "function": tool_info
+            }
+            tools_list.append(tool_dict)
+        return tools_list
+
     def _increase_attempt_or_maxed_out(self):
         self.current_attempts += 1
         if self.current_attempts > self.max_attempts:

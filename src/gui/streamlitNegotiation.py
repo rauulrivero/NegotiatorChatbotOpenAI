@@ -4,7 +4,6 @@ import streamlit as st
 class StreamlitApp:
     def __init__(self, crud_service, chatbot, app, auth):
         self.openai_api_key = None
-        self.model_name = None
         self.crud_service = crud_service
         self.auth = auth
         self.chatbot = chatbot
@@ -16,6 +15,7 @@ class StreamlitApp:
             st.session_state.messages = [
             {"role": "system", "content": system_message},
             ]
+            self.chatbot.create_thread()
 
         st.title('🤖💬 SF OpenAI Chatbot')
 
@@ -35,7 +35,7 @@ class StreamlitApp:
                         st.error('Nombre de usuario o contraseña incorrectos')
 
             st.title('🤖💬 SF OpenAI Chatbot')
-            st.sidebar.info("Este chatbot utiliza el modelo de lenguaje GPT-3.5 o GPT-4 de OpenAI para responder a tus preguntas. ¡Pruébalo!")
+            st.sidebar.info("Este chatbot utiliza el modelo de lenguaje GPT-4 de OpenAI para responder a tus preguntas. ¡Pruébalo!")
 
             self.openai_api_key = st.text_input('Introduce tu API key de OpenAI', type='password')
             openai.api_key = self.openai_api_key
@@ -45,11 +45,6 @@ class StreamlitApp:
             else:
                 st.success('Puedes proceder a chatear', icon='👉')
 
-            system_message = st.text_area(label='Mensaje de sistema:',
-                                        height=180,
-                                        placeholder='Instrucciones que complementan el comportamiento de tu modelo. Ej: Responde siempre alegre.')
-
-            st.session_state["openai_model"] = st.radio("Selecciona el modelo que deseas usar:", ("gpt-3.5-turbo", "gpt-4-0125-preview"))
             st.sidebar.button('Limpiar chat', on_click=clear_chat_history)
 
 
@@ -58,8 +53,6 @@ class StreamlitApp:
         email = st.session_state['user']['email'] if 'user' in st.session_state else None
         password = st.session_state['user']['password'] if 'user' in st.session_state else None
         self.auth.set_user(email, password)
-
-        self.model_name = st.session_state["openai_model"]
 
         system_message = self.chatbot.get_system_message()
 
@@ -87,10 +80,16 @@ class StreamlitApp:
                 with st.chat_message("user"):
                     st.markdown(prompt)
 
-                with st.chat_message("assistant"):
-                    self.model_name = st.session_state["openai_model"]
+                
 
-                    response = self.chatbot.ask_chat_gpt(self.model_name, self.openai_api_key, st.session_state.messages)
+                with st.chat_message("assistant"):
+                    typing_message = st.empty()  
+                    typing_message.text("Typing...")  
+
+                    response = self.chatbot.ask_assistant(self.openai_api_key, {"role": "user", "content": prompt})
+
+                    typing_message.empty() 
+
                     if self.chatbot.get_functions_call().get_debt_id() is not None:
                         st.session_state.debt_id = self.chatbot.get_functions_call().get_debt_id()
                 
