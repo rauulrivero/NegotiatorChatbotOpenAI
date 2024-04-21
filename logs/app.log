@@ -44185,3 +44185,540 @@ WHERE debts.id = %(id_1)s
 2024-03-22 13:09:13,602 INFO httpx : HTTP Request: POST https://api.openai.com/v1/files "HTTP/1.1 200 OK"
 2024-03-22 13:09:17,705 INFO httpx : HTTP Request: POST https://api.openai.com/v1/assistants "HTTP/1.1 200 OK"
 2024-03-22 13:09:17,988 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads "HTTP/1.1 200 OK"
+2024-03-22 13:10:12,248 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:10:12,248 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:12,249 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:10:12,249 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:12,250 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:10:12,250 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:12,251 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:10:12,251 INFO sqlalchemy.engine.Engine : SELECT 1 FROM pg_database WHERE datname='postgres'
+2024-03-22 13:10:12,251 INFO sqlalchemy.engine.Engine : [generated in 0.00028s] {}
+2024-03-22 13:10:12,252 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:10:12,296 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:10:12,296 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:12,296 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:10:12,297 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:12,297 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:10:12,297 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:12,297 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:10:12,297 INFO sqlalchemy.engine.Engine : COMMIT
+2024-03-22 13:10:12,437 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:10:12,437 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:12,438 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:10:12,438 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:12,439 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:10:12,440 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:12,441 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:10:12,441 INFO sqlalchemy.engine.Engine : SELECT 1 FROM pg_database WHERE datname='postgres'
+2024-03-22 13:10:12,441 INFO sqlalchemy.engine.Engine : [generated in 0.00055s] {}
+2024-03-22 13:10:12,444 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:10:12,514 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:10:12,514 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:12,514 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:10:12,514 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:12,516 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:10:12,516 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:12,516 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:10:12,517 INFO sqlalchemy.engine.Engine : COMMIT
+2024-03-22 13:10:21,568 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:10:21,568 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:21,569 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:10:21,569 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:21,569 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:10:21,569 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:21,570 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:10:21,570 INFO sqlalchemy.engine.Engine : SELECT 1 FROM pg_database WHERE datname='postgres'
+2024-03-22 13:10:21,570 INFO sqlalchemy.engine.Engine : [generated in 0.00018s] {}
+2024-03-22 13:10:21,571 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:10:21,612 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:10:21,612 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:21,613 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:10:21,613 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:21,613 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:10:21,613 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:21,613 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:10:21,613 INFO sqlalchemy.engine.Engine : COMMIT
+2024-03-22 13:10:23,618 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:10:23,618 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:23,619 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:10:23,619 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:23,619 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:10:23,619 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:23,620 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:10:23,620 INFO sqlalchemy.engine.Engine : SELECT 1 FROM pg_database WHERE datname='postgres'
+2024-03-22 13:10:23,620 INFO sqlalchemy.engine.Engine : [generated in 0.00016s] {}
+2024-03-22 13:10:23,620 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:10:23,657 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:10:23,657 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:23,658 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:10:23,658 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:23,658 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:10:23,658 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:23,659 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:10:23,659 INFO sqlalchemy.engine.Engine : COMMIT
+2024-03-22 13:10:24,514 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:10:24,514 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:24,514 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:10:24,514 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:24,516 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:10:24,516 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:24,516 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:10:24,517 INFO sqlalchemy.engine.Engine : SELECT 1 FROM pg_database WHERE datname='postgres'
+2024-03-22 13:10:24,517 INFO sqlalchemy.engine.Engine : [generated in 0.00025s] {}
+2024-03-22 13:10:24,518 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:10:24,557 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:10:24,557 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:24,557 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:10:24,557 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:24,557 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:10:24,558 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:24,558 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:10:24,558 INFO sqlalchemy.engine.Engine : COMMIT
+2024-03-22 13:10:24,575 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:10:24,576 INFO sqlalchemy.engine.Engine : SELECT users.email AS users_email, users.password AS users_password, users.name AS users_name, users.surname AS users_surname, users.telephone AS users_telephone 
+FROM users 
+WHERE users.email = %(email_1)s AND users.password = %(password_1)s 
+ LIMIT %(param_1)s
+2024-03-22 13:10:24,576 INFO sqlalchemy.engine.Engine : [generated in 0.00025s] {'email_1': 'a@email.es', 'password_1': 'hola', 'param_1': 1}
+2024-03-22 13:10:24,579 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:10:35,993 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:10:35,993 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:35,994 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:10:35,994 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:35,994 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:10:35,994 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:35,995 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:10:35,995 INFO sqlalchemy.engine.Engine : SELECT 1 FROM pg_database WHERE datname='postgres'
+2024-03-22 13:10:35,995 INFO sqlalchemy.engine.Engine : [generated in 0.00026s] {}
+2024-03-22 13:10:35,996 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:10:36,036 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:10:36,036 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:36,036 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:10:36,037 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:36,037 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:10:36,037 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:36,038 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:10:36,038 INFO sqlalchemy.engine.Engine : COMMIT
+2024-03-22 13:10:38,708 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:10:38,708 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:38,709 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:10:38,709 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:38,709 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:10:38,709 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:38,710 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:10:38,710 INFO sqlalchemy.engine.Engine : SELECT 1 FROM pg_database WHERE datname='postgres'
+2024-03-22 13:10:38,710 INFO sqlalchemy.engine.Engine : [generated in 0.00021s] {}
+2024-03-22 13:10:38,711 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:10:38,748 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:10:38,749 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:38,749 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:10:38,749 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:38,750 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:10:38,750 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:38,750 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:10:38,750 INFO sqlalchemy.engine.Engine : COMMIT
+2024-03-22 13:10:39,217 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:10:39,713 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs "HTTP/1.1 200 OK"
+2024-03-22 13:10:40,023 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_L5Jj1dXO5h3IIIocQcAAyul7 "HTTP/1.1 200 OK"
+2024-03-22 13:10:45,371 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_L5Jj1dXO5h3IIIocQcAAyul7 "HTTP/1.1 200 OK"
+2024-03-22 13:10:45,668 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:10:46,372 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:10:46,372 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:46,373 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:10:46,373 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:46,373 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:10:46,374 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:46,374 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:10:46,374 INFO sqlalchemy.engine.Engine : SELECT 1 FROM pg_database WHERE datname='postgres'
+2024-03-22 13:10:46,374 INFO sqlalchemy.engine.Engine : [generated in 0.00019s] {}
+2024-03-22 13:10:46,376 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:10:46,412 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:10:46,412 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:46,412 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:10:46,412 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:46,413 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:10:46,413 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:10:46,413 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:10:46,413 INFO sqlalchemy.engine.Engine : COMMIT
+2024-03-22 13:10:46,795 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:10:47,240 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs "HTTP/1.1 200 OK"
+2024-03-22 13:10:47,522 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_hi6uwHLYiiMXht1jnxs51Lci "HTTP/1.1 200 OK"
+2024-03-22 13:10:52,858 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_hi6uwHLYiiMXht1jnxs51Lci "HTTP/1.1 200 OK"
+2024-03-22 13:10:52,864 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:10:52,865 INFO sqlalchemy.engine.Engine : SELECT debts.id AS debts_id, debts.total_debt AS debts_total_debt, debts.maximum_period_months AS debts_maximum_period_months, debts.minimum_accepted_payment AS debts_minimum_accepted_payment, debts.user_email AS debts_user_email 
+FROM debts 
+WHERE debts.user_email = %(user_email_1)s
+2024-03-22 13:10:52,865 INFO sqlalchemy.engine.Engine : [generated in 0.00015s] {'user_email_1': 'a@email.es'}
+2024-03-22 13:10:52,868 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:10:53,327 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_hi6uwHLYiiMXht1jnxs51Lci/submit_tool_outputs "HTTP/1.1 200 OK"
+2024-03-22 13:10:53,557 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_hi6uwHLYiiMXht1jnxs51Lci "HTTP/1.1 200 OK"
+2024-03-22 13:10:58,871 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_hi6uwHLYiiMXht1jnxs51Lci "HTTP/1.1 200 OK"
+2024-03-22 13:11:04,207 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_hi6uwHLYiiMXht1jnxs51Lci "HTTP/1.1 200 OK"
+2024-03-22 13:11:04,439 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:11:16,090 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:11:16,090 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:11:16,091 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:11:16,091 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:11:16,091 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:11:16,091 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:11:16,092 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:11:16,092 INFO sqlalchemy.engine.Engine : SELECT 1 FROM pg_database WHERE datname='postgres'
+2024-03-22 13:11:16,092 INFO sqlalchemy.engine.Engine : [generated in 0.00027s] {}
+2024-03-22 13:11:16,093 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:11:16,131 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:11:16,131 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:11:16,132 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:11:16,132 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:11:16,132 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:11:16,132 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:11:16,132 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:11:16,133 INFO sqlalchemy.engine.Engine : COMMIT
+2024-03-22 13:11:16,482 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:11:16,936 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs "HTTP/1.1 200 OK"
+2024-03-22 13:11:17,384 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_1y5TP2s11e29lg5AEArJjX1N "HTTP/1.1 200 OK"
+2024-03-22 13:11:22,783 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_1y5TP2s11e29lg5AEArJjX1N "HTTP/1.1 200 OK"
+2024-03-22 13:11:23,209 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_1y5TP2s11e29lg5AEArJjX1N/submit_tool_outputs "HTTP/1.1 200 OK"
+2024-03-22 13:11:23,445 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_1y5TP2s11e29lg5AEArJjX1N "HTTP/1.1 200 OK"
+2024-03-22 13:11:28,752 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_1y5TP2s11e29lg5AEArJjX1N "HTTP/1.1 200 OK"
+2024-03-22 13:11:28,985 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:11:59,976 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:11:59,976 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:11:59,978 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:11:59,978 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:11:59,978 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:11:59,978 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:11:59,979 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:11:59,979 INFO sqlalchemy.engine.Engine : SELECT 1 FROM pg_database WHERE datname='postgres'
+2024-03-22 13:11:59,979 INFO sqlalchemy.engine.Engine : [generated in 0.00017s] {}
+2024-03-22 13:11:59,980 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:12:00,036 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:12:00,036 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:12:00,037 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:12:00,037 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:12:00,037 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:12:00,037 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:12:00,038 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:12:00,038 INFO sqlalchemy.engine.Engine : COMMIT
+2024-03-22 13:12:00,360 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:12:00,798 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs "HTTP/1.1 200 OK"
+2024-03-22 13:12:01,102 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_084bFaBjrRnsWzIyNLuPSNRX "HTTP/1.1 200 OK"
+2024-03-22 13:12:06,420 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_084bFaBjrRnsWzIyNLuPSNRX "HTTP/1.1 200 OK"
+2024-03-22 13:12:06,426 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:12:06,428 INFO sqlalchemy.engine.Engine : SELECT debts.id AS debts_id, debts.total_debt AS debts_total_debt, debts.maximum_period_months AS debts_maximum_period_months, debts.minimum_accepted_payment AS debts_minimum_accepted_payment, debts.user_email AS debts_user_email 
+FROM debts 
+WHERE debts.id = %(id_1)s 
+ LIMIT %(param_1)s
+2024-03-22 13:12:06,428 INFO sqlalchemy.engine.Engine : [generated in 0.00016s] {'id_1': '30', 'param_1': 1}
+2024-03-22 13:12:06,430 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:12:06,858 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_084bFaBjrRnsWzIyNLuPSNRX/submit_tool_outputs "HTTP/1.1 200 OK"
+2024-03-22 13:12:07,175 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_084bFaBjrRnsWzIyNLuPSNRX "HTTP/1.1 200 OK"
+2024-03-22 13:12:12,496 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_084bFaBjrRnsWzIyNLuPSNRX "HTTP/1.1 200 OK"
+2024-03-22 13:12:12,729 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:12:45,111 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:12:45,111 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:12:45,112 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:12:45,112 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:12:45,112 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:12:45,112 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:12:45,113 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:12:45,113 INFO sqlalchemy.engine.Engine : SELECT 1 FROM pg_database WHERE datname='postgres'
+2024-03-22 13:12:45,113 INFO sqlalchemy.engine.Engine : [generated in 0.00019s] {}
+2024-03-22 13:12:45,114 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:12:45,154 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:12:45,154 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:12:45,155 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:12:45,155 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:12:45,155 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:12:45,155 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:12:45,155 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:12:45,155 INFO sqlalchemy.engine.Engine : COMMIT
+2024-03-22 13:12:45,537 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:12:45,996 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs "HTTP/1.1 200 OK"
+2024-03-22 13:12:46,282 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_U1mczOzv2zWPRjxOYpgpdcg8 "HTTP/1.1 200 OK"
+2024-03-22 13:12:51,570 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_U1mczOzv2zWPRjxOYpgpdcg8 "HTTP/1.1 200 OK"
+2024-03-22 13:12:51,576 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:12:51,577 INFO sqlalchemy.engine.Engine : SELECT debts.id AS debts_id, debts.total_debt AS debts_total_debt, debts.maximum_period_months AS debts_maximum_period_months, debts.minimum_accepted_payment AS debts_minimum_accepted_payment, debts.user_email AS debts_user_email 
+FROM debts 
+WHERE debts.id = %(id_1)s 
+ LIMIT %(param_1)s
+2024-03-22 13:12:51,577 INFO sqlalchemy.engine.Engine : [generated in 0.00014s] {'id_1': '30', 'param_1': 1}
+2024-03-22 13:12:51,578 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:12:52,018 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_U1mczOzv2zWPRjxOYpgpdcg8/submit_tool_outputs "HTTP/1.1 200 OK"
+2024-03-22 13:12:52,250 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_U1mczOzv2zWPRjxOYpgpdcg8 "HTTP/1.1 200 OK"
+2024-03-22 13:12:57,580 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_U1mczOzv2zWPRjxOYpgpdcg8 "HTTP/1.1 200 OK"
+2024-03-22 13:13:02,921 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_U1mczOzv2zWPRjxOYpgpdcg8 "HTTP/1.1 200 OK"
+2024-03-22 13:13:03,223 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:13:39,589 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:13:39,589 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:13:39,589 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:13:39,589 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:13:39,591 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:13:39,591 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:13:39,591 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:13:39,591 INFO sqlalchemy.engine.Engine : SELECT 1 FROM pg_database WHERE datname='postgres'
+2024-03-22 13:13:39,591 INFO sqlalchemy.engine.Engine : [generated in 0.00016s] {}
+2024-03-22 13:13:39,592 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:13:39,634 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:13:39,634 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:13:39,634 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:13:39,634 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:13:39,635 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:13:39,635 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:13:39,635 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:13:39,635 INFO sqlalchemy.engine.Engine : COMMIT
+2024-03-22 13:13:40,010 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:13:40,472 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs "HTTP/1.1 200 OK"
+2024-03-22 13:13:40,751 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_IYYNiXjI5ZK247PuXafbkfrR "HTTP/1.1 200 OK"
+2024-03-22 13:13:46,056 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_IYYNiXjI5ZK247PuXafbkfrR "HTTP/1.1 200 OK"
+2024-03-22 13:13:46,063 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:13:46,064 INFO sqlalchemy.engine.Engine : SELECT debts.id AS debts_id, debts.total_debt AS debts_total_debt, debts.maximum_period_months AS debts_maximum_period_months, debts.minimum_accepted_payment AS debts_minimum_accepted_payment, debts.user_email AS debts_user_email 
+FROM debts 
+WHERE debts.id = %(id_1)s 
+ LIMIT %(param_1)s
+2024-03-22 13:13:46,064 INFO sqlalchemy.engine.Engine : [generated in 0.00017s] {'id_1': '30', 'param_1': 1}
+2024-03-22 13:13:46,065 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:13:46,458 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_IYYNiXjI5ZK247PuXafbkfrR/submit_tool_outputs "HTTP/1.1 200 OK"
+2024-03-22 13:13:46,681 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_IYYNiXjI5ZK247PuXafbkfrR "HTTP/1.1 200 OK"
+2024-03-22 13:13:52,014 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_IYYNiXjI5ZK247PuXafbkfrR "HTTP/1.1 200 OK"
+2024-03-22 13:13:57,340 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_IYYNiXjI5ZK247PuXafbkfrR "HTTP/1.1 200 OK"
+2024-03-22 13:13:57,574 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:14:25,222 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:14:25,222 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:14:25,223 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:14:25,223 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:14:25,223 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:14:25,223 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:14:25,224 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:14:25,224 INFO sqlalchemy.engine.Engine : SELECT 1 FROM pg_database WHERE datname='postgres'
+2024-03-22 13:14:25,224 INFO sqlalchemy.engine.Engine : [generated in 0.00016s] {}
+2024-03-22 13:14:25,225 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:14:25,267 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:14:25,267 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:14:25,268 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:14:25,268 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:14:25,268 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:14:25,268 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:14:25,270 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:14:25,270 INFO sqlalchemy.engine.Engine : COMMIT
+2024-03-22 13:14:25,681 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:14:26,112 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs "HTTP/1.1 200 OK"
+2024-03-22 13:14:26,391 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_iBiDzfrDtmIHWqtjneB9xR7L "HTTP/1.1 200 OK"
+2024-03-22 13:14:31,712 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_iBiDzfrDtmIHWqtjneB9xR7L "HTTP/1.1 200 OK"
+2024-03-22 13:14:31,719 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:14:31,719 INFO sqlalchemy.engine.Engine : SELECT debts.id AS debts_id, debts.total_debt AS debts_total_debt, debts.maximum_period_months AS debts_maximum_period_months, debts.minimum_accepted_payment AS debts_minimum_accepted_payment, debts.user_email AS debts_user_email 
+FROM debts 
+WHERE debts.id = %(id_1)s 
+ LIMIT %(param_1)s
+2024-03-22 13:14:31,720 INFO sqlalchemy.engine.Engine : [generated in 0.00021s] {'id_1': '30', 'param_1': 1}
+2024-03-22 13:14:31,721 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:14:32,154 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_iBiDzfrDtmIHWqtjneB9xR7L/submit_tool_outputs "HTTP/1.1 200 OK"
+2024-03-22 13:14:32,375 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_iBiDzfrDtmIHWqtjneB9xR7L "HTTP/1.1 200 OK"
+2024-03-22 13:14:37,688 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_iBiDzfrDtmIHWqtjneB9xR7L "HTTP/1.1 200 OK"
+2024-03-22 13:14:42,992 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_iBiDzfrDtmIHWqtjneB9xR7L "HTTP/1.1 200 OK"
+2024-03-22 13:14:43,232 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:15:36,910 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:15:36,910 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:15:36,911 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:15:36,911 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:15:36,912 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:15:36,912 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:15:36,912 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:15:36,912 INFO sqlalchemy.engine.Engine : SELECT 1 FROM pg_database WHERE datname='postgres'
+2024-03-22 13:15:36,912 INFO sqlalchemy.engine.Engine : [generated in 0.00023s] {}
+2024-03-22 13:15:36,913 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:15:36,952 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:15:36,952 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:15:36,952 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:15:36,952 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:15:36,954 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:15:36,954 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:15:36,954 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:15:36,954 INFO sqlalchemy.engine.Engine : COMMIT
+2024-03-22 13:15:37,357 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:15:37,787 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs "HTTP/1.1 200 OK"
+2024-03-22 13:15:38,099 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_SeeV6L5yuUHrdHTkAYHQ1QEj "HTTP/1.1 200 OK"
+2024-03-22 13:15:43,406 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_SeeV6L5yuUHrdHTkAYHQ1QEj "HTTP/1.1 200 OK"
+2024-03-22 13:15:43,412 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:15:43,414 INFO sqlalchemy.engine.Engine : SELECT debts.id AS debts_id, debts.total_debt AS debts_total_debt, debts.maximum_period_months AS debts_maximum_period_months, debts.minimum_accepted_payment AS debts_minimum_accepted_payment, debts.user_email AS debts_user_email 
+FROM debts 
+WHERE debts.id = %(id_1)s 
+ LIMIT %(param_1)s
+2024-03-22 13:15:43,414 INFO sqlalchemy.engine.Engine : [generated in 0.00015s] {'id_1': '30', 'param_1': 1}
+2024-03-22 13:15:43,416 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:15:43,904 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_SeeV6L5yuUHrdHTkAYHQ1QEj/submit_tool_outputs "HTTP/1.1 200 OK"
+2024-03-22 13:15:44,171 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_SeeV6L5yuUHrdHTkAYHQ1QEj "HTTP/1.1 200 OK"
+2024-03-22 13:15:49,491 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_SeeV6L5yuUHrdHTkAYHQ1QEj "HTTP/1.1 200 OK"
+2024-03-22 13:15:54,804 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_SeeV6L5yuUHrdHTkAYHQ1QEj "HTTP/1.1 200 OK"
+2024-03-22 13:15:55,121 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:16:53,687 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:16:53,687 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:16:53,688 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:16:53,688 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:16:53,688 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:16:53,688 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:16:53,689 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:16:53,689 INFO sqlalchemy.engine.Engine : SELECT 1 FROM pg_database WHERE datname='postgres'
+2024-03-22 13:16:53,689 INFO sqlalchemy.engine.Engine : [generated in 0.00025s] {}
+2024-03-22 13:16:53,690 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:16:53,730 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:16:53,730 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:16:53,731 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:16:53,731 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:16:53,731 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:16:53,731 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:16:53,732 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:16:53,732 INFO sqlalchemy.engine.Engine : COMMIT
+2024-03-22 13:16:54,146 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:16:54,624 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs "HTTP/1.1 200 OK"
+2024-03-22 13:16:54,981 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_47Gpc4492peMDgFHcWbrmueP "HTTP/1.1 200 OK"
+2024-03-22 13:17:00,223 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_47Gpc4492peMDgFHcWbrmueP "HTTP/1.1 200 OK"
+2024-03-22 13:17:00,230 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:17:00,230 INFO sqlalchemy.engine.Engine : SELECT debts.id AS debts_id, debts.total_debt AS debts_total_debt, debts.maximum_period_months AS debts_maximum_period_months, debts.minimum_accepted_payment AS debts_minimum_accepted_payment, debts.user_email AS debts_user_email 
+FROM debts 
+WHERE debts.id = %(id_1)s 
+ LIMIT %(param_1)s
+2024-03-22 13:17:00,230 INFO sqlalchemy.engine.Engine : [generated in 0.00013s] {'id_1': '30', 'param_1': 1}
+2024-03-22 13:17:00,232 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:17:00,232 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:17:00,233 INFO sqlalchemy.engine.Engine : SELECT debts.id AS debts_id, debts.total_debt AS debts_total_debt, debts.maximum_period_months AS debts_maximum_period_months, debts.minimum_accepted_payment AS debts_minimum_accepted_payment, debts.user_email AS debts_user_email 
+FROM debts 
+WHERE debts.id = %(id_1)s 
+ LIMIT %(param_1)s
+2024-03-22 13:17:00,233 INFO sqlalchemy.engine.Engine : [cached since 0.002344s ago] {'id_1': '30', 'param_1': 1}
+2024-03-22 13:17:00,233 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:17:00,646 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_47Gpc4492peMDgFHcWbrmueP/submit_tool_outputs "HTTP/1.1 200 OK"
+2024-03-22 13:17:00,876 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_47Gpc4492peMDgFHcWbrmueP "HTTP/1.1 200 OK"
+2024-03-22 13:17:06,176 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_47Gpc4492peMDgFHcWbrmueP "HTTP/1.1 200 OK"
+2024-03-22 13:17:11,507 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_47Gpc4492peMDgFHcWbrmueP "HTTP/1.1 200 OK"
+2024-03-22 13:17:11,755 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:17:37,110 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:17:37,110 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:17:37,111 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:17:37,111 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:17:37,111 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:17:37,112 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:17:37,112 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:17:37,112 INFO sqlalchemy.engine.Engine : SELECT 1 FROM pg_database WHERE datname='postgres'
+2024-03-22 13:17:37,112 INFO sqlalchemy.engine.Engine : [generated in 0.00019s] {}
+2024-03-22 13:17:37,113 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:17:37,152 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:17:37,152 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:17:37,152 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:17:37,152 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:17:37,153 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:17:37,153 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:17:37,153 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:17:37,153 INFO sqlalchemy.engine.Engine : COMMIT
+2024-03-22 13:17:37,483 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:17:37,896 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs "HTTP/1.1 200 OK"
+2024-03-22 13:17:38,174 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_Xkdwfe9cAcXTHPTxKKnDkJ3D "HTTP/1.1 200 OK"
+2024-03-22 13:17:43,485 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_Xkdwfe9cAcXTHPTxKKnDkJ3D "HTTP/1.1 200 OK"
+2024-03-22 13:17:48,788 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_Xkdwfe9cAcXTHPTxKKnDkJ3D "HTTP/1.1 200 OK"
+2024-03-22 13:17:49,019 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:18:04,789 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:18:04,789 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:18:04,789 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:18:04,789 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:18:04,790 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:18:04,790 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:18:04,790 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:18:04,790 INFO sqlalchemy.engine.Engine : SELECT 1 FROM pg_database WHERE datname='postgres'
+2024-03-22 13:18:04,790 INFO sqlalchemy.engine.Engine : [generated in 0.00016s] {}
+2024-03-22 13:18:04,791 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:18:04,831 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:18:04,831 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:18:04,833 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:18:04,833 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:18:04,833 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:18:04,833 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:18:04,834 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:18:04,834 INFO sqlalchemy.engine.Engine : COMMIT
+2024-03-22 13:18:05,463 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:18:06,020 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs "HTTP/1.1 200 OK"
+2024-03-22 13:18:06,305 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_DhEXBfFepfbzEM0N9oFiT0wI "HTTP/1.1 200 OK"
+2024-03-22 13:18:11,642 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_DhEXBfFepfbzEM0N9oFiT0wI "HTTP/1.1 200 OK"
+2024-03-22 13:18:11,648 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:18:11,649 INFO sqlalchemy.engine.Engine : SELECT debts.id AS debts_id, debts.total_debt AS debts_total_debt, debts.maximum_period_months AS debts_maximum_period_months, debts.minimum_accepted_payment AS debts_minimum_accepted_payment, debts.user_email AS debts_user_email 
+FROM debts 
+WHERE debts.id = %(id_1)s 
+ LIMIT %(param_1)s
+2024-03-22 13:18:11,649 INFO sqlalchemy.engine.Engine : [generated in 0.00022s] {'id_1': '30', 'param_1': 1}
+2024-03-22 13:18:11,651 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:18:12,080 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_DhEXBfFepfbzEM0N9oFiT0wI/submit_tool_outputs "HTTP/1.1 200 OK"
+2024-03-22 13:18:12,317 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_DhEXBfFepfbzEM0N9oFiT0wI "HTTP/1.1 200 OK"
+2024-03-22 13:18:17,654 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_DhEXBfFepfbzEM0N9oFiT0wI "HTTP/1.1 200 OK"
+2024-03-22 13:18:17,888 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:19:08,823 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:19:08,823 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:19:08,823 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:19:08,824 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:19:08,824 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:19:08,824 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:19:08,825 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:19:08,825 INFO sqlalchemy.engine.Engine : SELECT 1 FROM pg_database WHERE datname='postgres'
+2024-03-22 13:19:08,825 INFO sqlalchemy.engine.Engine : [generated in 0.00018s] {}
+2024-03-22 13:19:08,826 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:19:08,976 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:19:08,977 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:19:08,978 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:19:08,978 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:19:08,978 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:19:08,978 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:19:08,978 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:19:08,979 INFO sqlalchemy.engine.Engine : COMMIT
+2024-03-22 13:19:09,336 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:19:09,814 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs "HTTP/1.1 200 OK"
+2024-03-22 13:19:10,101 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_7oF36G4tJ6ageRLSPoL3ursf "HTTP/1.1 200 OK"
+2024-03-22 13:19:15,473 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_7oF36G4tJ6ageRLSPoL3ursf "HTTP/1.1 200 OK"
+2024-03-22 13:19:20,784 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_7oF36G4tJ6ageRLSPoL3ursf "HTTP/1.1 200 OK"
+2024-03-22 13:19:21,018 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:19:49,320 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:19:49,320 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:19:49,320 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:19:49,320 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:19:49,321 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:19:49,321 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:19:49,321 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:19:49,321 INFO sqlalchemy.engine.Engine : SELECT 1 FROM pg_database WHERE datname='postgres'
+2024-03-22 13:19:49,321 INFO sqlalchemy.engine.Engine : [generated in 0.00020s] {}
+2024-03-22 13:19:49,322 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:19:49,361 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:19:49,361 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:19:49,362 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:19:49,362 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:19:49,362 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:19:49,362 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:19:49,363 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:19:49,363 INFO sqlalchemy.engine.Engine : COMMIT
+2024-03-22 13:19:49,733 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:19:50,251 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs "HTTP/1.1 200 OK"
+2024-03-22 13:19:51,573 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_HKldOrZKP9w8wtNn1Fq4YKex "HTTP/1.1 200 OK"
+2024-03-22 13:19:56,788 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_HKldOrZKP9w8wtNn1Fq4YKex "HTTP/1.1 200 OK"
+2024-03-22 13:20:02,094 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_HKldOrZKP9w8wtNn1Fq4YKex "HTTP/1.1 200 OK"
+2024-03-22 13:20:02,331 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:21:23,569 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:21:23,569 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:21:23,569 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:21:23,569 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:21:23,570 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:21:23,570 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:21:23,570 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:21:23,570 INFO sqlalchemy.engine.Engine : SELECT 1 FROM pg_database WHERE datname='postgres'
+2024-03-22 13:21:23,570 INFO sqlalchemy.engine.Engine : [generated in 0.00015s] {}
+2024-03-22 13:21:23,571 INFO sqlalchemy.engine.Engine : ROLLBACK
+2024-03-22 13:21:23,609 INFO sqlalchemy.engine.Engine : select pg_catalog.version()
+2024-03-22 13:21:23,609 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:21:23,610 INFO sqlalchemy.engine.Engine : select current_schema()
+2024-03-22 13:21:23,610 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:21:23,610 INFO sqlalchemy.engine.Engine : show standard_conforming_strings
+2024-03-22 13:21:23,610 INFO sqlalchemy.engine.Engine : [raw sql] {}
+2024-03-22 13:21:23,611 INFO sqlalchemy.engine.Engine : BEGIN (implicit)
+2024-03-22 13:21:23,611 INFO sqlalchemy.engine.Engine : COMMIT
+2024-03-22 13:21:24,015 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
+2024-03-22 13:21:24,474 INFO httpx : HTTP Request: POST https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs "HTTP/1.1 200 OK"
+2024-03-22 13:21:24,765 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_OvrQJCHZjJ5G1IIO2WxTZkoy "HTTP/1.1 200 OK"
+2024-03-22 13:21:30,063 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_OvrQJCHZjJ5G1IIO2WxTZkoy "HTTP/1.1 200 OK"
+2024-03-22 13:21:35,292 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_OvrQJCHZjJ5G1IIO2WxTZkoy "HTTP/1.1 200 OK"
+2024-03-22 13:21:40,611 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/runs/run_OvrQJCHZjJ5G1IIO2WxTZkoy "HTTP/1.1 200 OK"
+2024-03-22 13:21:40,845 INFO httpx : HTTP Request: GET https://api.openai.com/v1/threads/thread_dWB1GjAX3syRJleX8oJV0N4a/messages "HTTP/1.1 200 OK"
