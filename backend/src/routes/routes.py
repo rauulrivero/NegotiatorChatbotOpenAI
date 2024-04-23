@@ -77,22 +77,6 @@ def create_debt():
     return jsonify({"message": "Deuda creada exitosamente"}), 201
 
 
-@api.route('/login', methods=['POST'])
-def login():
-    data = request.get_json()
-    email = data['email']
-    password = data['password']
-
-    if crud_service.validate_user(email, password):
-        auth.set_user(email, password)
-        return jsonify({"message": "Se ha logueado exitosamente"}), 200
-    else:
-        return jsonify({"error": "Nombre de usuario o contraseña incorrectos"}), 401
-
-@api.route('/logout', methods=['POST'])
-def logout():
-    auth.logout()
-    return jsonify({"message": "Se ha deslogueado exitosamente"}), 200
 
 @api.route('/delete_assistant', methods=['POST'])
 def delete_assistant():
@@ -121,6 +105,24 @@ def add_tool():
 @api.route('/get_tools', methods=['GET'])
 def get_tools():
     return jsonify(assistant_tools.get_tools())
+
+# Usadas en streamlit_app.py
+@api.route('/login', methods=['POST'])
+def login():
+    data = request.get_json()
+    email = data['email']
+    password = data['password']
+
+    if crud_service.validate_user(email, password):
+        auth.set_user(email, password)
+        return jsonify({"message": "Se ha logueado exitosamente"}), 200
+    else:
+        return jsonify({"error": "Nombre de usuario o contraseña incorrectos"}), 401
+    
+@api.route('/logout', methods=['POST'])
+def logout():
+    auth.logout()
+    return jsonify({"message": "Se ha deslogueado exitosamente"}), 200
 
 @api.route('/ask_assistant', methods=['POST'])
 def ask_assistant():

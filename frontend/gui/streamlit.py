@@ -17,7 +17,6 @@ class StreamlitApp:
             login_button = st.button('Iniciar Sesión')
 
             if login_button:
-
                 auth = requests.post('http://localhost:5000/login', json={'email': email, 'password': password})
 
                 if auth.status_code == 200:
@@ -25,7 +24,9 @@ class StreamlitApp:
                     st.success('¡Inicio de sesión exitoso!')
                 else:
                     st.error('Nombre de usuario o contraseña incorrectos')
-                    
+          
+                
+                        
 
             st.title('🤖💬 SF OpenAI Chatbot')
             st.sidebar.info("Este chatbot utiliza el modelo de lenguaje GPT-4 de OpenAI para responder a tus preguntas. ¡Pruébalo!")

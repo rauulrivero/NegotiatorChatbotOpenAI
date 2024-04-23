@@ -7,7 +7,6 @@ import os
 
 dotenv.load_dotenv()
 ASSISTANT_ID = os.getenv('ASSISTANT_ID')
-THREAD_ID = os.getenv('THREAD_ID')
 
 class Chatbot:
     def __init__(self, functions_call):
@@ -17,13 +16,14 @@ class Chatbot:
         self.functions_available = functions_call.get_functions_available()
         self.client = OpenAI()
         self.run = None
+        self.thread_id = None
         self.model_name = "gpt-4-0125-preview"
         
-        global ASSISTANT_ID, THREAD_ID
+        global ASSISTANT_ID
         if ASSISTANT_ID is None: 
             self._create_assistant()
     
-        if THREAD_ID is None:
+        if self.thread_id is None:
             self.create_thread()
 
 
@@ -59,8 +59,7 @@ class Chatbot:
         """Crea un nuevo hilo y devuelve su ID."""
         thread = self.client.beta.threads.create()
 
-        global THREAD_ID
-        THREAD_ID = thread.id
+        self.thread_id = thread.id
 
         dotenv.set_key('.env', 'THREAD_ID', THREAD_ID)
 
@@ -69,20 +68,20 @@ class Chatbot:
 
     def ask_assistant(self, message):
 
-        global THREAD_ID, ASSISTANT_ID
+        ASSISTANT_ID
 
-        if THREAD_ID is None:
+        if self.thread_id is None:
             self.create_thread()
 
         self.client.beta.threads.messages.create(
-            thread_id=THREAD_ID,
+            thread_id=self.thread_id,
             role="user",
             content=message
         )
 
         # Step 4: Run the Assistant
         run = self.client.beta.threads.runs.create(
-            thread_id=THREAD_ID,
+            thread_id=self.thread_id,
             assistant_id=ASSISTANT_ID,
             instructions=self.system_message
         )
@@ -91,13 +90,13 @@ class Chatbot:
         while True:
             # If run is completed, get messages
             run_status = self.client.beta.threads.runs.retrieve(
-            thread_id=THREAD_ID,
+            thread_id=self.thread_id,
             run_id=run.id
         )
 
             if run_status.status == 'completed':
                 messages = self.client.beta.threads.messages.list(
-                    thread_id=THREAD_ID
+                    thread_id=self.thread_id
                 )
 
                 # Loop through messages and print content based on role
@@ -132,7 +131,7 @@ class Chatbot:
                     
                 print("Submitting outputs back to the Assistant...")
                 self.client.beta.threads.runs.submit_tool_outputs(
-                    thread_id=THREAD_ID,
+                    thread_id=self.thread_id,
                     run_id=run.id,
                     tool_outputs=tool_outputs
                 )
@@ -141,8 +140,7 @@ class Chatbot:
         
         
     def delete_thread(self):
-        global THREAD_ID
-        self.client.beta.threads.delete(thread_id=THREAD_ID)
+        self.client.beta.threads.delete(thread_id=self.thread_id)
 
     def get_system_message(self):
         return self.system_message
