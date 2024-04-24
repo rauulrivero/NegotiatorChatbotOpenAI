@@ -61,8 +61,6 @@ class Chatbot:
 
         self.thread_id = thread.id
 
-        dotenv.set_key('.env', 'THREAD_ID', THREAD_ID)
-
 
    
 

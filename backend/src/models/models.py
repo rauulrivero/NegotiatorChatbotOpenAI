@@ -19,7 +19,7 @@ class Debt(Base):
     __tablename__ = 'debts'
 
     id = Column(Integer, primary_key=True)
-    total_debt = Column(Integer)
+    total_debt = Column(Float)
     maximum_period_months = Column(Integer)
     minimum_accepted_payment = Column(Float)
     user_email = Column(String, ForeignKey('users.email'))
