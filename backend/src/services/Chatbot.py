@@ -47,6 +47,7 @@ class Chatbot:
             file_ids=[file_arenas.id, file_comunidades.id, file_linea105.id]
         )
 
+        
         global ASSISTANT_ID
         ASSISTANT_ID = assistant.id
         dotenv.set_key('.env', 'ASSISTANT_ID', ASSISTANT_ID)
@@ -66,7 +67,7 @@ class Chatbot:
 
     def ask_assistant(self, message):
 
-        ASSISTANT_ID
+        global ASSISTANT_ID
 
         if self.thread_id is None:
             self.create_thread()

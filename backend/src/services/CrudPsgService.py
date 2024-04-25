@@ -1,5 +1,6 @@
 from src.models.models import User, Debt
 from sqlalchemy.exc import IntegrityError
+import logging
 import json
 
 class CRUDService:
@@ -17,6 +18,10 @@ class CRUDService:
             except IntegrityError:
                 self.session.rollback()
                 print("Error: El usuario ya existe.")
+                return None
+            except Exception as e:
+                self.session.rollback()
+                logging.error("Error: ", e)
                 return None
         
     def user_exists(self, email):

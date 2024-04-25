@@ -1,4 +1,4 @@
-from frontend.gui.app_interface import StreamlitApp
+from gui.app_interface import StreamlitApp
 
 def main():
     app = StreamlitApp()
