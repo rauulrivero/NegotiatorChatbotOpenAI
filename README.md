@@ -37,9 +37,11 @@ Nota: Si estás usando un ambiente virtual (lo cual es recomendado), asegúrate 
 ## Configuración de variables de entorno
 Este proyecto utiliza variables de entorno para manejar configuraciones sensibles. Crea un archivo .env en la raíz del proyecto y añade las siguientes variables:
 
+ ```ruby
 OPENAI_API_KEY=tu_llave_de_api_aquí
 SQLALCHEMY_DATABASE_URI=la_uri_de_tu_sql_alchemy_aquí
 FLASK_ENV=development # o production o test
+```
 
 Reemplaza tu_llave_de_api_aquí con tu verdadera API key de OpenAI.
 
