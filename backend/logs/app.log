@@ -8,3 +8,113 @@
  * Running on http://127.0.0.1:5000
  * Running on http://192.168.1.34:5000
 2024-04-25 12:32:40,798 INFO werkzeug : [33mPress CTRL+C to quit[0m
+2024-04-25 12:34:54,358 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 12:34:54] "[35m[1mPOST /create_user HTTP/1.1[0m" 201 -
+2024-04-25 12:34:59,867 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 12:34:59] "POST /login HTTP/1.1" 200 -
+2024-04-25 12:35:06,609 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 12:35:06] "POST /set_api_key HTTP/1.1" 200 -
+2024-04-25 12:35:22,829 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 12:35:22] "[35m[1mPOST /create_debt HTTP/1.1[0m" 201 -
+2024-04-25 12:35:31,820 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 12:35:31] "POST /ask_assistant HTTP/1.1" 200 -
+2024-04-25 12:35:49,778 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 12:35:49] "POST /ask_assistant HTTP/1.1" 200 -
+2024-04-25 13:51:49,940 INFO werkzeug : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.34:5000
+2024-04-25 13:51:49,941 INFO werkzeug : [33mPress CTRL+C to quit[0m
+2024-04-25 13:52:03,759 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 13:52:03] "POST /login HTTP/1.1" 200 -
+2024-04-25 13:52:15,287 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 13:52:15] "POST /set_api_key HTTP/1.1" 200 -
+2024-04-25 13:52:32,895 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 13:52:32] "POST /ask_assistant HTTP/1.1" 200 -
+2024-04-25 14:34:50,133 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 14:34:50] "POST /ask_assistant HTTP/1.1" 200 -
+2024-04-25 18:47:11,234 INFO werkzeug : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.117:5000
+2024-04-25 18:47:11,235 INFO werkzeug : [33mPress CTRL+C to quit[0m
+2024-04-25 18:47:31,114 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 18:47:31] "POST /login HTTP/1.1" 200 -
+2024-04-25 18:47:51,621 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 18:47:51] "POST /set_api_key HTTP/1.1" 200 -
+2024-04-25 18:48:36,011 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 18:48:36] "POST /ask_assistant HTTP/1.1" 200 -
+2024-04-25 18:53:04,397 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 18:53:04] "POST /ask_assistant HTTP/1.1" 200 -
+2024-04-25 18:56:03,832 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 18:56:03] "POST /ask_assistant HTTP/1.1" 200 -
+2024-04-25 18:59:27,264 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 18:59:27] "POST /ask_assistant HTTP/1.1" 200 -
+2024-04-25 21:24:05,839 INFO werkzeug : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.117:5000
+2024-04-25 21:24:05,840 INFO werkzeug : [33mPress CTRL+C to quit[0m
+2024-04-25 21:24:27,092 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 21:24:27] "POST /login HTTP/1.1" 200 -
+2024-04-25 21:24:41,626 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 21:24:41] "POST /logout HTTP/1.1" 200 -
+2024-04-25 21:24:51,211 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 21:24:51] "POST /login HTTP/1.1" 200 -
+2024-04-25 21:24:59,435 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 21:24:59] "POST /set_api_key HTTP/1.1" 200 -
+2024-04-25 21:25:10,972 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 21:25:10] "POST /ask_assistant HTTP/1.1" 200 -
+2024-04-25 21:28:07,406 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 21:28:07] "POST /ask_assistant HTTP/1.1" 200 -
+2024-04-25 21:29:09,385 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 21:29:09] "POST /ask_assistant HTTP/1.1" 200 -
+2024-04-25 21:31:23,964 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 21:31:23] "POST /ask_assistant HTTP/1.1" 200 -
+2024-04-25 22:57:50,284 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 22:57:50] "POST /login HTTP/1.1" 200 -
+2024-04-25 22:57:58,447 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 22:57:58] "POST /set_api_key HTTP/1.1" 200 -
+2024-04-25 22:58:13,867 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 22:58:13] "POST /ask_assistant HTTP/1.1" 200 -
+2024-04-25 23:02:08,787 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 23:02:08] "POST /ask_assistant HTTP/1.1" 200 -
+2024-04-25 23:18:02,711 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 23:18:02] "[35m[1mPOST /ask_assistant HTTP/1.1[0m" 500 -
+2024-04-25 23:18:02,808 ERROR werkzeug : Error on request:
+Traceback (most recent call last):
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\werkzeug\serving.py", line 323, in execute
+    application_iter = app(environ, start_response)
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\flask\app.py", line 1488, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\flask\app.py", line 1466, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\backend\src\routes\routes.py", line 131, in ask_assistant
+    return jsonify({"response": chatbot.ask_assistant(message)}), 200
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\backend\src\services\Chatbot.py", line 75, in ask_assistant
+    self.client.beta.threads.messages.create(
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\openai\resources\beta\threads\messages\messages.py", line 92, in create
+    return self._post(
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\openai\_base_client.py", line 1200, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\openai\_base_client.py", line 889, in request
+    return self._request(
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\openai\_base_client.py", line 980, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Can't add messages to thread_W1zrbr5G1hphYQ7BCJ9N6lff while a run run_hKzNkUtiZTdDhwqem8VeqF3A is active.", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+2024-04-25 23:18:13,066 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 23:18:13] "[35m[1mPOST /ask_assistant HTTP/1.1[0m" 500 -
+2024-04-25 23:18:13,070 ERROR werkzeug : Error on request:
+Traceback (most recent call last):
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\werkzeug\serving.py", line 323, in execute
+    application_iter = app(environ, start_response)
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\flask\app.py", line 1488, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\flask\app.py", line 1466, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\backend\src\routes\routes.py", line 131, in ask_assistant
+    return jsonify({"response": chatbot.ask_assistant(message)}), 200
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\backend\src\services\Chatbot.py", line 75, in ask_assistant
+    self.client.beta.threads.messages.create(
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\openai\resources\beta\threads\messages\messages.py", line 92, in create
+    return self._post(
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\openai\_base_client.py", line 1200, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\openai\_base_client.py", line 889, in request
+    return self._request(
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\openai\_base_client.py", line 980, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Can't add messages to thread_W1zrbr5G1hphYQ7BCJ9N6lff while a run run_hKzNkUtiZTdDhwqem8VeqF3A is active.", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+2024-04-25 23:18:26,879 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 23:18:26] "POST /ask_assistant HTTP/1.1" 200 -
+2024-04-25 23:19:05,689 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 23:19:05] "POST /ask_assistant HTTP/1.1" 200 -
+2024-04-25 23:31:26,880 INFO werkzeug : 127.0.0.1 - - [25/Apr/2024 23:31:26] "POST /ask_assistant HTTP/1.1" 200 -

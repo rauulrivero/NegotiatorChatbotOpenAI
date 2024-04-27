@@ -45,20 +45,6 @@ class Tooling:
         """
         return self.tools_data.get('tools', [])
 
-    def delete_assistant(self):
-        """
-        Elimina un asistente.
-
-        Args:
-            assistant_id (str): El ID del asistente a eliminar.
-        """
-
-        assistant_id = os.getenv('ASSISTANT_ID')
-
-        self.client.beta.assistants.delete(assistant_id)
-
-        unset_key('.env', 'ASSISTANT_ID')
-
 
     # delete tool por la key del json
     def delete_tool(self, tool_key):
@@ -75,11 +61,3 @@ class Tooling:
                 self.save_tools()
                 break
             
-    def delete_thread(self):
-        """
-        Elimina un hilo.
-        """
-
-        thread_id = os.getenv('THREAD_ID')
-        self.client.beta.threads.delete(thread_id)
-        unset_key('.env', 'THREAD_ID')
