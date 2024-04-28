@@ -150,3 +150,125 @@ openai.BadRequestError: Error code: 400 - {'error': {'message': "Can't add messa
 2024-04-27 11:54:26,294 INFO werkzeug : 127.0.0.1 - - [27/Apr/2024 11:54:26] "POST /ask_assistant HTTP/1.1" 200 -
 2024-04-27 12:02:38,609 INFO werkzeug : 127.0.0.1 - - [27/Apr/2024 12:02:38] "POST /ask_assistant HTTP/1.1" 200 -
 2024-04-27 12:14:18,072 INFO werkzeug : 127.0.0.1 - - [27/Apr/2024 12:14:18] "POST /ask_assistant HTTP/1.1" 200 -
+2024-04-28 10:47:43,462 INFO werkzeug : 127.0.0.1 - - [28/Apr/2024 10:47:43] "POST /login HTTP/1.1" 200 -
+2024-04-28 10:47:50,623 INFO werkzeug : 127.0.0.1 - - [28/Apr/2024 10:47:50] "POST /set_api_key HTTP/1.1" 200 -
+2024-04-28 10:48:44,248 INFO werkzeug : 127.0.0.1 - - [28/Apr/2024 10:48:44] "[35m[1mPOST /ask_assistant HTTP/1.1[0m" 500 -
+2024-04-28 10:48:44,369 ERROR werkzeug : Error on request:
+Traceback (most recent call last):
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\httpx\_transports\default.py", line 233, in handle_request
+    resp = self._pool.handle_request(req)
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\httpcore\_sync\connection_pool.py", line 216, in handle_request
+    raise exc from None
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\httpcore\_sync\connection_pool.py", line 196, in handle_request
+    response = connection.handle_request(
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\httpcore\_sync\connection.py", line 99, in handle_request
+    raise exc
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\httpcore\_sync\connection.py", line 76, in handle_request
+    stream = self._connect(request)
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\httpcore\_sync\connection.py", line 122, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\httpcore\_backends\sync.py", line 205, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\openai\_base_client.py", line 918, in _request
+    response = self._client.send(
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\httpx\_client.py", line 1015, in _send_single_request
+    response = transport.handle_request(request)
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\httpx\_transports\default.py", line 232, in handle_request
+    with map_httpcore_exceptions():
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\werkzeug\serving.py", line 323, in execute
+    application_iter = app(environ, start_response)
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\flask\app.py", line 1488, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\flask\app.py", line 1466, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\backend\src\routes\routes.py", line 131, in ask_assistant
+    return jsonify({"response": chatbot.ask_assistant(message)}), 200
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\backend\src\services\Chatbot.py", line 75, in ask_assistant
+    self.client.beta.threads.messages.create(
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\openai\resources\beta\threads\messages\messages.py", line 92, in create
+    return self._post(
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\openai\_base_client.py", line 1200, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\openai\_base_client.py", line 889, in request
+    return self._request(
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\openai\_base_client.py", line 927, in _request
+    return self._retry_request(
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\openai\_base_client.py", line 1013, in _retry_request
+    return self._request(
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\openai\_base_client.py", line 927, in _request
+    return self._retry_request(
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\openai\_base_client.py", line 1013, in _retry_request
+    return self._request(
+  File "C:\Users\rauul\Desktop\GCID 3º\2º Cuatri\Prácticas Externas\openai\LLamadasFuncionesOpenAI\.venv\lib\site-packages\openai\_base_client.py", line 937, in _request
+    raise APITimeoutError(request=request) from err
+openai.APITimeoutError: Request timed out.
+2024-04-28 10:54:38,096 INFO werkzeug : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.20.10.5:5000
+2024-04-28 10:54:38,098 INFO werkzeug : [33mPress CTRL+C to quit[0m
+2024-04-28 11:13:43,083 INFO werkzeug : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.20.10.4:5000
+2024-04-28 11:13:43,084 INFO werkzeug : [33mPress CTRL+C to quit[0m
+2024-04-28 11:13:53,766 INFO werkzeug : 172.20.10.4 - - [28/Apr/2024 11:13:53] "GET / HTTP/1.1" 200 -
+2024-04-28 11:14:35,774 INFO werkzeug : 127.0.0.1 - - [28/Apr/2024 11:14:35] "POST /login HTTP/1.1" 200 -
+2024-04-28 11:14:45,278 INFO werkzeug : 127.0.0.1 - - [28/Apr/2024 11:14:45] "POST /set_api_key HTTP/1.1" 200 -
+2024-04-28 11:15:36,992 INFO werkzeug : 127.0.0.1 - - [28/Apr/2024 11:15:36] "POST /ask_assistant HTTP/1.1" 200 -
+2024-04-28 11:37:03,191 INFO werkzeug : 127.0.0.1 - - [28/Apr/2024 11:37:03] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2024-04-28 11:37:04,154 INFO werkzeug : 127.0.0.1 - - [28/Apr/2024 11:37:04] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2024-04-28 11:37:08,140 INFO werkzeug : 127.0.0.1 - - [28/Apr/2024 11:37:08] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2024-04-28 11:37:09,309 INFO werkzeug : 127.0.0.1 - - [28/Apr/2024 11:37:09] "POST /login HTTP/1.1" 200 -
+2024-04-28 11:37:17,699 INFO werkzeug : 127.0.0.1 - - [28/Apr/2024 11:37:17] "POST /set_api_key HTTP/1.1" 200 -
+2024-04-28 11:38:08,729 INFO werkzeug : 127.0.0.1 - - [28/Apr/2024 11:38:08] "POST /ask_assistant HTTP/1.1" 200 -
+2024-04-28 11:40:30,705 INFO werkzeug : 127.0.0.1 - - [28/Apr/2024 11:40:30] "POST /logout HTTP/1.1" 200 -
+2024-04-28 11:40:37,144 INFO werkzeug : 127.0.0.1 - - [28/Apr/2024 11:40:37] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2024-04-28 11:42:43,429 INFO werkzeug : 127.0.0.1 - - [28/Apr/2024 11:42:43] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2024-04-28 11:42:43,663 INFO werkzeug : 127.0.0.1 - - [28/Apr/2024 11:42:43] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2024-04-28 11:42:48,012 INFO werkzeug : 127.0.0.1 - - [28/Apr/2024 11:42:48] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2024-04-28 11:42:50,364 INFO werkzeug : 127.0.0.1 - - [28/Apr/2024 11:42:50] "POST /login HTTP/1.1" 200 -
+2024-04-28 11:43:48,173 INFO werkzeug : 127.0.0.1 - - [28/Apr/2024 11:43:48] "POST /set_api_key HTTP/1.1" 200 -
+2024-04-28 11:46:17,182 INFO werkzeug : 127.0.0.1 - - [28/Apr/2024 11:46:17] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2024-04-28 11:46:17,774 INFO werkzeug : 127.0.0.1 - - [28/Apr/2024 11:46:17] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2024-04-28 11:46:18,427 INFO werkzeug : 127.0.0.1 - - [28/Apr/2024 11:46:18] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2024-04-28 11:46:23,834 INFO werkzeug : 127.0.0.1 - - [28/Apr/2024 11:46:23] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2024-04-28 11:46:28,024 INFO werkzeug : 127.0.0.1 - - [28/Apr/2024 11:46:28] "POST /login HTTP/1.1" 200 -
+2024-04-28 11:52:26,463 INFO werkzeug : 127.0.0.1 - - [28/Apr/2024 11:52:26] "POST /set_api_key HTTP/1.1" 200 -
+2024-04-28 11:52:53,203 INFO werkzeug : 127.0.0.1 - - [28/Apr/2024 11:52:53] "POST /ask_assistant HTTP/1.1" 200 -
