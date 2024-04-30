@@ -312,3 +312,14 @@ openai.APITimeoutError: Request timed out.
 2024-04-29 13:58:12,313 INFO werkzeug : 127.0.0.1 - - [29/Apr/2024 13:58:12] "POST /set_api_key HTTP/1.1" 200 -
 2024-04-29 13:58:59,100 INFO werkzeug : 127.0.0.1 - - [29/Apr/2024 13:58:59] "POST /ask_assistant HTTP/1.1" 200 -
 2024-04-29 13:59:47,914 INFO werkzeug : 127.0.0.1 - - [29/Apr/2024 13:59:47] "POST /ask_assistant HTTP/1.1" 200 -
+2024-04-30 14:01:52,602 INFO werkzeug : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.195.166.173:5000
+2024-04-30 14:01:52,603 INFO werkzeug : [33mPress CTRL+C to quit[0m
+2024-04-30 14:02:12,943 INFO werkzeug : 127.0.0.1 - - [30/Apr/2024 14:02:12] "POST /login HTTP/1.1" 200 -
+2024-04-30 14:02:34,565 INFO werkzeug : 127.0.0.1 - - [30/Apr/2024 14:02:34] "POST /set_api_key HTTP/1.1" 200 -
+2024-04-30 14:03:56,481 INFO werkzeug : 127.0.0.1 - - [30/Apr/2024 14:03:56] "POST /ask_assistant HTTP/1.1" 200 -
+2024-04-30 14:05:00,793 INFO werkzeug : 127.0.0.1 - - [30/Apr/2024 14:05:00] "POST /ask_assistant HTTP/1.1" 200 -
+2024-04-30 14:06:07,362 INFO werkzeug : 127.0.0.1 - - [30/Apr/2024 14:06:07] "POST /ask_assistant HTTP/1.1" 200 -
+2024-04-30 14:06:27,629 INFO werkzeug : 127.0.0.1 - - [30/Apr/2024 14:06:27] "POST /ask_assistant HTTP/1.1" 200 -
