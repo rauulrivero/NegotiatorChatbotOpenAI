@@ -1,4 +1,3 @@
-import requests
 import streamlit as st
 
 class StreamlitApp:
@@ -16,11 +15,14 @@ class StreamlitApp:
 
     def display_login_section(self):
         email, password = st.text_input("Email"), st.text_input("Contraseña", type="password")
-        auth_response = self.api_handler.post_request("login", {"email": email, "password": password})
-        if auth_response.status_code == 200:
-            st.success("¡Inicio de sesión exitoso!")
-            st.session_state["user"] = {"email": email, "password": password}
-            st.rerun()
+        if st.button("Iniciar sesión"):
+            auth_response = self.api_handler.post_request("login", {"email": email, "password": password})
+            if auth_response.status_code == 200:
+                st.success("¡Inicio de sesión exitoso!")
+                st.session_state["user"] = {"email": email, "password": password}
+                st.rerun()
+            else:
+                st.error("No se ha podido iniciar sesión")
 
     def display_register_section(self):
         user_details = {
@@ -30,13 +32,15 @@ class StreamlitApp:
             "surname": st.text_input("Apellido"),
             "telephone": st.text_input("Teléfono"),
         }
-        reg_response = self.api_handler.post_request("create_user", user_details)
-        if reg_response.status_code == 201:
-            st.success("¡Usuario creado exitosamente!")
-        elif reg_response.status_code == 409:
-            st.error("El usuario ya existe")
-        else:
-            st.error("Error al crear el usuario. Por favor, verifica los datos ingresados.")
+        if st.button("Registrar"):
+            reg_response = self.api_handler.post_request("create_user", user_details)
+            if reg_response.status_code == 201:
+                st.success("¡Usuario creado exitosamente!")
+            elif reg_response.status_code == 409:
+                st.error("El usuario ya existe")
+            else:
+                st.error("Error al crear el usuario. Por favor, verifica los datos ingresados.")
+
 
     def display_user_section(self):
         st.title('👤 Usuario')
@@ -142,6 +146,7 @@ class StreamlitApp:
                 
                     st.markdown(response)
                     st.session_state.messages.append({"role": "assistant", "content": response})
+
 
 
         

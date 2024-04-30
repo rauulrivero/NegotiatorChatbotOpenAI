@@ -2,6 +2,24 @@
 
 Este proyecto implementa un sofisticado chatbot diseñado para ofrecer asistencia personalizada en la gestión de deudas y la recuperación de documentos, utilizando la API de Assistant de OpenAI. A través de una combinación eficaz entre tecnologías de punta y una interfaz de usuario intuitiva, el chatbot busca transformar la manera en que los usuarios manejan sus compromisos financieros y acceden a información clave almacenada.
 
+## PDF OpenAIBots adjuntado
+
+Este documento se centra en brindar una visión exhaustiva sobre cómo aprovechar al máximo la API de
+OpenAI utilizando Python, una de las herramientas más potentes y versátiles en el ámbito del desarrollo y la
+inteligencia artificial. A lo largo de este documento, exploraremos detalladamente cómo configurar y utilizar
+las APIs de Assistants y Chat Completion de OpenAI para crear asistentes inteligentes capaces de responder
+preguntas, realizar tareas específicas mediante llamadas a funciones, y recuperar información de archivos
+mediante retrieval.
+
+En los dos últimos apartados del índice, "Explicación detallada del código (backend)" y "Explicación detallada
+del código (frontend)", se proporcionan detalles meticulosos sobre el código implementado en el repositorio
+adjuntado. Estas secciones están meticulosamente construidas para ofrecer una comprensión profunda de
+cómo el código funciona, su estructura, y cómo se integra con la API de OpenAI para lograr los objetivos
+establecidos. Estas explicaciones detalladas son esenciales tanto para quienes están dando sus primeros pasos
+en la programación con OpenAI como para quienes buscan profundizar su comprensión y mejorar sus
+aplicaciones de inteligencia artificial.
+
+
 ## Tecnología y Estructura
 El backend del sistema se desarrolla en Flask, un framework de Python altamente flexible y eficiente para aplicaciones web, apoyado por una base de datos SQLAlchemy. Esta estructura asegura un manejo robusto y seguro de la información de los usuarios.
 
@@ -109,7 +127,7 @@ Este apartado proporciona a los usuarios instrucciones claras sobre cómo prepar
 - **Interfaz Intuitiva y Fácil de Usar:** Con una interfaz simplificada y accesible, el chatbot guía a los usuarios a través de los procesos de consulta y negociación de deudas de manera amigable y eficiente.
 
 
-## Explicación del Código
+## Breve explicación del Código
 Este apartado proporciona una visión general de la arquitectura del código y los componentes principales del proyecto. Nuestra aplicación se divide en dos segmentos principales: el backend, desarrollado en Flask, y el frontend, creado con Streamlit. Aquí se describen los componentes clave y cómo interactúan entre sí.
 
 ### **Backend (Flask)**
@@ -182,6 +200,19 @@ El archivo NegotiatorChatbot.py incluye la clase Negotiator, responsable de defi
 #### - streamlit_app.py:
 El archivo streamlit_app.py cumple con el propósito principal de inicializar y ejecutar la aplicación Streamlit, instanciando StreamlitApp desde app_interface.py y llamando al método .run(). Actúa como el punto de entrada que activa la interfaz de usuario construida en Streamlit, manteniendo su rol claro y conciso sin sobrecargar con detalles operativos.
 
+
+## Funcionalidades del chatbot
+
+           
+- set_debt_id: Establece el ID de la deuda actual para la negociación, asegurando que todas las operaciones subsiguientes se realicen con respecto a la deuda correcta.
+- get_all_debts: Muestra todas las deudas asociadas al usuario, facilitando la selección para negociar.
+- calculate_payment_plan: Calcula un plan de pago personalizado basado en propuestas específicas del usuario.
+- manage_negotiation: Maneja el proceso de negociación de deudas, permitiendo al usuario solicitar una oferta inmediata de pago, responder con una contraoferta, o recibir una propuesta inicial.
+- propose_payment_plan: Formula un plan de pago adaptado sin necesidad de entrada adicional del usuario.
+- propose_partial_immediate_payment: Calcula un plan de pago ajustado para el saldo restante tras un pago parcial inmediato.
+- identify_community_holidays_query: Identifica y proporciona información sobre los días festivos por comunidades autónomas españolas de un año específico.
+- identify_bus_schedule_query: Ofrece información sobre el horario de la guagua entre Las Palmas y Gáldar.
+- identify_arenas_holidays_query: Se activa automáticamente para buscar información relevante sobre los días festivos de apertura o cierre del Centro Comercial Las Arenas.
 
 
 ## Contacto

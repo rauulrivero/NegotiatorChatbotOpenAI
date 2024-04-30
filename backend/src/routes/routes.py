@@ -106,7 +106,7 @@ def add_tool():
 def get_tools():
     return jsonify(assistant_tools.get_tools())
 
-# Usadas en streamlit_app.py
+
 @api.route('/login', methods=['POST'])
 def login():
     data = request.get_json()
