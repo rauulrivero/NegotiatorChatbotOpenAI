@@ -48,6 +48,7 @@ class StreamlitApp:
         if st.button("Cerrar Sesión"):
             self.api_handler.post_request("logout", {})
             st.session_state.pop("user")
+            st.session_state.messages = []
             st.rerun()
 
 
@@ -93,7 +94,7 @@ class StreamlitApp:
                 debt_button = st.button('Crear deuda')
 
                 if debt_button:
-                    debt_response = self.create_debt(total_debt, maximum_period_months, st.session_state["user"]["email"])
+                    debt_response = self.api_handler.post_request("create_debt", {'total_debt': total_debt, 'maximum_period_months': maximum_period_months, 'user_email': st.session_state['user']['email']})
                     if debt_response.status_code == 201:
                         st.success('Deuda creada exitosamente')
                     else:
